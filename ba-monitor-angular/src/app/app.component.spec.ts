@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'BA-Monitor-Angular'`, () => {
+  it(`should have as title 'ba-monitor-angular'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('BA-Monitor-Angular');
+    expect(app.title).toEqual('ba-monitor-angular');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('BA-Monitor-Angular app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('ba-monitor-angular app is running!');
   });
 });
