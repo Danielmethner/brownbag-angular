@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "BA-Monitor-Angular": {
+    "ba-monitor-angular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
