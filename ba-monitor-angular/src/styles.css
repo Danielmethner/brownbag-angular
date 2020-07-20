@@ -104,6 +104,7 @@ html * {
 .padding-top-1em {
   padding-top: 0.9em;
 }
-.checkmark {
-  margin-right: 1em;
+
+.row {
+  margin-right:0;
 }
