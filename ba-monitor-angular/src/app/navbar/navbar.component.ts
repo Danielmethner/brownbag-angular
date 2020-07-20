@@ -13,7 +13,6 @@ export class NavbarComponent implements OnInit {
   faSignInAlt = faSignInAlt;
   faUserPlus = faUserPlus;
   navItems = [
-    { name: 'Home', destination: 'home' },
     { name: 'Technology Stack', destination: 'tech-stack' },
     { name: 'Data Privacy', destination: 'data-privacy' },
     { name: 'Imprint', destination: 'imprint' },

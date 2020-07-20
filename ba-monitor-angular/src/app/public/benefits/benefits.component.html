@@ -1,0 +1,16 @@
+<div>
+	<div class="row align-center">
+		<div class="col-1 col-md-3"></div>
+		<div class="col-11 col-md-9">
+			<div class="row">
+				<h2 class="text-center padding-bottom-1em padding-top-1em">Financial education made easy!</h2>
+			</div>
+			<div class="row padding-bottom-1em" *ngFor="let benefit of benefitList">
+
+				<span>
+					<fa-icon class="checkmark" [icon]="faCheck" [styles]="{'stroke': 'green', 'color': 'green'}"></fa-icon> {{benefit.text}}
+				</span>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+h1 {
+  font-weight: bold;
+  color: white;
+  font-family: "Nunito"
+}
+
+header {
+  padding-top: 0;
+}
+
+.jumbotron {
+  background-color: mediumseagreen
+}

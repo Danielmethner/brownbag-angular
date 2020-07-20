@@ -13,6 +13,8 @@ import { HomeComponent } from './public/home/home.component';
 import { ImprintComponent } from './public/imprint/imprint.component';
 import { TechStackComponent } from './public/tech-stack/tech-stack.component';
 import { DataPrivacyComponent } from './public/data-privacy/data-privacy.component';
+import { LoginComponent } from './public/login/login.component';
+import { BenefitsComponent } from './public/benefits/benefits.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { DataPrivacyComponent } from './public/data-privacy/data-privacy.compone
     HomeComponent,
     ImprintComponent,
     TechStackComponent,
-    DataPrivacyComponent
+    DataPrivacyComponent,
+    LoginComponent,
+    BenefitsComponent
   ],
   imports: [
     BrowserModule,
