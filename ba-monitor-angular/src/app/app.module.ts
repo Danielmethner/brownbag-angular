@@ -15,6 +15,7 @@ import { TechStackComponent } from './public/tech-stack/tech-stack.component';
 import { DataPrivacyComponent } from './public/data-privacy/data-privacy.component';
 import { LoginComponent } from './public/login/login.component';
 import { BenefitsComponent } from './public/benefits/benefits.component';
+import { RegistrationComponent } from './public/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BenefitsComponent } from './public/benefits/benefits.component';
     TechStackComponent,
     DataPrivacyComponent,
     LoginComponent,
-    BenefitsComponent
+    BenefitsComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
