@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -9,12 +9,14 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 export class NavbarComponent implements OnInit {
 
   navbarOpen = false;
-  iconFaHome = faHome;
+  faHome = faHome;
+  faSignInAlt = faSignInAlt;
+  faUserPlus = faUserPlus;
   navItems = [
     { name: 'Home', destination: 'home' },
-    { name: 'Imprint', destination: 'imprint' },
     { name: 'Technology Stack', destination: 'tech-stack' },
-    { name: 'Data Privacy', destination: 'data-privacy' }
+    { name: 'Data Privacy', destination: 'data-privacy' },
+    { name: 'Imprint', destination: 'imprint' },
   ];
   constructor() { }
 

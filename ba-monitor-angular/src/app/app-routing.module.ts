@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ImprintComponent } from './imprint/imprint.component';
-import { DataPrivacyComponent } from './data-privacy/data-privacy.component';
-import { TechStackComponent } from './tech-stack/tech-stack.component';
+import { HomeComponent } from './public/home/home.component';
+import { ImprintComponent } from './public/imprint/imprint.component';
+import { DataPrivacyComponent } from './public/data-privacy/data-privacy.component';
+import { TechStackComponent } from './public/tech-stack/tech-stack.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

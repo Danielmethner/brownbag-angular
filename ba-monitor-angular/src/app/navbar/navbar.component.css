@@ -1,9 +1,20 @@
 .nav-brand {
   color: white;
 }
+
 .nav-link {
-  color: white;
+  color: white !important;
 }
+
+.nav-link:hover {
+  color: white !important;
+  font-weight: 600;
+}
+
 .bg-dark {
   background-color: royalblue !important;
+}
+
+.navbar-right {
+  
 }
