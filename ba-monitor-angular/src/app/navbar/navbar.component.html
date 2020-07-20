@@ -1,5 +1,4 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
 	<a class="text-align-left navbar-brand" routerLink="home">
 		<fa-icon [icon]="faHome" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon> Home
 	</a>
@@ -12,12 +11,17 @@
 	<div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item" *ngFor="let navItem of navItems">
-				<a class="nav-link" routerLink="{{navItem.destination}}" (click)="toggleNavbar()">{{navItem.name}}</a>
+				<a class="nav-link" routerLink="{{navItem.destination}}" (click)="toggleNavbar()">
+					<fa-icon *ngIf="navItem.icon" [icon]="navItem.icon" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon> {{navItem.name}}
+				</a>
 			</li>
 		</ul>
 	</div>
 	<div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
 		<ul class="navbar-nav ml-auto">
+			<li class="nav-item"><a class="nav-link" routerLink="user-profile" (click)="toggleNavbar()">
+					<fa-icon [icon]="faUserCircle" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon> Profile
+				</a></li>
 			<li class="nav-item"><a class="nav-link" routerLink="login" (click)="toggleNavbar()">
 					<fa-icon [icon]="faSignInAlt" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon> Login
 				</a></li>

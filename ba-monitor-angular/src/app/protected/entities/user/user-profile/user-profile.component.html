@@ -1,0 +1,83 @@
+<div class="container">
+	<header class="jumbotron">
+		<h1>User Profile</h1>
+	</header>
+
+	<div class="row">
+		<div class="col text-center" >
+			<fa-icon class="icon-bg" transform="down-0.9" [fixedWidth]="true" [icon]="faUserCircle"></fa-icon>
+
+		</div>
+	</div>
+	<!-- DATA TABLES -->
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table table-striped">
+				<thead class="table-dark">
+					<tr class="bg-success">
+						<th colspan="2" scope="colgroup" class="bg-info">User Data</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<b>User ID</b>
+						</td>
+						<td>{{currentUser.id}}</td>
+					</tr>
+					<tr>
+						<td>
+							<b>Login Name</b>
+						</td>
+						<td>{{currentUser.username}}</td>
+					</tr>
+					<tr>
+						<td>
+							<b>Token (Partial)</b>
+						</td>
+						<td>{{currentUser.accessToken.substring(0, 20)}}...</td>
+					</tr>
+					<tr>
+						<td>
+							<b>Authorities</b>
+						</td>
+						<td>
+							<div *ngFor="let role of currentUser.roles">
+								<label>&rArr; {{role}}</label>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-6">
+			<table class="table table-striped">
+				<thead class="table-dark">
+					<tr>
+						<th colspan="2" scope="colgroup">Private Person</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<b>Person ID</b>
+						</td>
+						<td>{{privatePerson.id}}</td>
+					</tr>
+					<tr>
+						<td>
+							<b>Person Name</b>
+						</td>
+						<td>{{privatePerson.name}}</td>
+					</tr>
+					<tr>
+						<td>
+							<b>Party Type</b>
+						</td>
+						<td>{{privatePerson.partyType}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

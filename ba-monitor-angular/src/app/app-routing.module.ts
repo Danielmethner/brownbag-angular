@@ -6,6 +6,8 @@ import { DataPrivacyComponent } from './public/data-privacy/data-privacy.compone
 import { TechStackComponent } from './public/tech-stack/tech-stack.component';
 import { LoginComponent } from './public/login/login.component';
 import { RegistrationComponent } from './public/registration/registration.component';
+import { UserProfileComponent } from './protected/entities/user/user-profile/user-profile.component';
+import { PersonBaseComponent } from './protected/entities/party/person-base/person-base.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,7 +17,8 @@ const routes: Routes = [
   { path: 'tech-stack', component: TechStackComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
-  
+  { path: 'user-profile', component: UserProfileComponent },
+  { path: 'person-base', component: PersonBaseComponent },  
 ];
 
 @NgModule({
