@@ -10,7 +10,12 @@ export class NavbarComponent implements OnInit {
 
   navbarOpen = false;
   iconFaHome = faHome;
-  navItems = [{ name: 'Home', destination: 'home' }, { name: 'Imprint', destination: 'imprint' }];
+  navItems = [
+    { name: 'Home', destination: 'home' },
+    { name: 'Imprint', destination: 'imprint' },
+    { name: 'Technology Stack', destination: 'tech-stack' },
+    { name: 'Data Privacy', destination: 'data-privacy' }
+  ];
   constructor() { }
 
   ngOnInit(): void {

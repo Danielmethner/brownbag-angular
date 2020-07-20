@@ -9,6 +9,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TechStackComponent } from './tech-stack/tech-stack.component';
+import { DataPrivacyComponent } from './data-privacy/data-privacy.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FooterComponent,
     NavbarComponent,
     HomeComponent,
-    ImprintComponent
+    ImprintComponent,
+    TechStackComponent,
+    DataPrivacyComponent
   ],
   imports: [
     BrowserModule,

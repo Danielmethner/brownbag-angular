@@ -1,0 +1,68 @@
+<div>
+	<div class="row google-page">
+		<div class="col"></div>
+		<div class="col-md-6">
+			<span>
+				<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+				<p class="c13 title" id="h.t0enwrlll645"><span class="c0 c20">Technology Stack and Infrastructure</span></p>
+				<p class="c2"><span class="c17 c0 c4"></span></p>
+				<p class="c9"><span class="c10 c0">The goal of this application is the development of an MVP that helps retail investors understand the accounting entries and resource flows of basic business and investment operations. Given this focus on education and the limited resources a side project like this inherently brings with it, the technologies have been chosen based on these
+						conditions. The
+						following considerations were taken into account:</span></p>
+				<p class="c7"><span class="c10 c0"></span></p>
+				<p class="c19"><span class="c0 c17"><a class="c1" href="#h.386olx7rgybo">Security</a></span></p>
+				<p class="c16"><span class="c17 c0"><a class="c1" href="#h.xojod4qhy349">Performance</a></span></p>
+				<p class="c16"><span class="c17 c0"><a class="c1" href="#h.c7vr9wo9atzc">Learning curve &amp; development speed</a></span></p>
+				<p class="c22"><span class="c17 c0"><a class="c1" href="#h.kvgfn8wfjiy">Deployment</a></span></p>
+				<p class="c2"><span class="c17 c0 c4"></span></p>
+				<h2 class="c11" id="h.386olx7rgybo"><span class="c18 c4">Security</span></h2>
+				<p class="c9"><span class="c0">The Website features both, a public area with static content like this page and a private area which can be accessed after logging in with password protected user accounts. Each user account may hold one or more roles, which determine which private pages are visible and what actions a user can take on these pages. Beyond the user name, password and
+						the assigned
+						roles, no further sensitive data is stored. These requirements for user authentication could be implemented via </span><span class="c0 c3"><a class="c1" href="https://spring.io/projects/spring-security">Spring Security</a></span><span class="c0">, </span><span class="c0">using
+					</span><span class="c0 c3"><a class="c1" href="https://jwt.io/">JWT tokens</a></span><span class="c10 c0">. </span></p>
+				<h2 class="c11" id="h.xojod4qhy349"><span class="c4 c18">Performance</span></h2>
+				<p class="c9"><span class="c10 c0">The number of concurrent users logged in is not expected to surpass more than 20 at any given time, virtually removing high network traffic as a performance concern. However, each user may conduct a relatively large number of transactions which need to be appropriately tracked and executed in a timely manner. While some differences between
+						languages do exist,
+						most modern programming languages are able to solve the required tasks fast enough to eliminate this factor as a major decision criterion. </span></p>
+				<h2 class="c11" id="h.c7vr9wo9atzc"><span class="c18 c4">Learning curve &amp; development speed</span></h2>
+				<p class="c9"><span class="c10 c0">A balance needed to be found between how powerful the used technologies are and how fast they could be learned and applied to enable the development of a stable and performant with the minimum number of hours invested. </span></p>
+				<p class="c9"><span class="c0">For the back-end, this implied using </span><span class="c0 c3"><a class="c1" href="https://spring.io/projects/spring-boot">Spring boot</a></span><span class="c0">&nbsp;which enables the creation of a production ready Java application within minutes, with minimal
+						configuration effort. When creating a project using </span><span class="c0 c3"><a class="c1" href="https://start.spring.ioamp;">Spring Initializr</a></span><span class="c0">, it is possible to choose between </span><span class="c0 c3"><a class="c1" href="https://maven.apache.orgamp">Maven</a></span><span class="c0">&nbsp;and </span><span class="c0 c3"><a class="c1"
+							href="https://gradle.org">Gradle</a></span><span class="c0">&nbsp;for build automation and dependency management which further speeds up the development process. &nbsp;It also allows for the implementation of </span><span class="c0 c3"><a class="c1" href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></span><span class="c0">&nbsp;endpoints and
+					</span><span class="c0 c3"><a class="c1" href="https://en.wikipedia.org/wiki/Data_access_object">DAO</a></span><span class="c0">&nbsp;objects for </span><span class="c0 c3"><a class="c1" href="https://en.wikipedia.org/wiki/Java_Persistence_API">JPA repositories</a></span><span class="c10 c0">, using annotations </span></p>
+				<p class="c9"><span class="c0">For the front-end, the decision was somewhat more difficult given the large number of frameworks with similar specialisations. There are three names however, which take the lead &nbsp;amongst established frameworks, which are Angular, Vue and React (see footnotes) </span><sup class="c0"><a href="#ftnt1" id="ftnt_ref1">[1]</a></sup><sup class="c0"><a
+							href="#ftnt2" id="ftnt_ref2">[2]</a></sup><sup class="c0"><a href="#ftnt3" id="ftnt_ref3">[3]</a></sup><sup class="c0"><a href="#ftnt4" id="ftnt_ref4">[4]</a></sup><span class="c10 c0">. </span></p>
+				<p class="c9"><span class="c0">From the perspective of requirements, any of those three frameworks would have done the job. However, Vue stands out amongst these, for being easy to learn thanks to using JavaScript rather than Typescript, having a comprehensive documentation and generally a </span><span class="c0 c3"><a class="c1"
+							href="https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html">better performance</a></span><span class="c0 c10">&nbsp;than Angular and React. Notable users of Vue.js are Alibaba, Apple and Google. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+				<p class="c7"><span class="c10 c0"></span></p>
+				<h2 class="c11" id="h.kvgfn8wfjiy"><span class="c12">Deployment</span></h2>
+				<p class="c9"><span class="c0">The last few years have seen a rise of powerful and user friendly hosting solutions at competitive rates. One of these providers is</span><span class="c0">&nbsp;</span><span class="c0 c3"><a class="c1" href="https://www.heroku.com/platform">Heroku</a></span><span class="c0">&nbsp;</span><span class="c10 c0">by Salesforce, a "platform as a service
+						based on a managed container system". It allows the creation of containers called "dynos", wherein each container manages the hosting of one application. Meaning that for this web application, there are two dynos: One for the Spring Boot API in the backend and one for the Vue.js application in the
+						frontend. There is a free tier which provides all necessary functions for development and a light-weight production setup. </span></p>
+				<p class="c9"><span class="c0">The deployment is quick and easy: Simply connect Your </span><span class="c0 c3"><a class="c1" href="https://github.com">GitHub</a></span><span class="c0 c4">&nbsp;</span><span class="c0">repository and ensure that any necessary environment variables are set. The
+						initial setup for popular technologies is usually well documented thanks to the community, like </span><span class="c0 c3"><a class="c1" href="https://cli.vuejs.org/guide/deployment.html%23heroku">here</a></span><span class="c0 c4">&nbsp;</span><span class="c0">for Vue.js or directly in
+						the Heroku Dev Center, like in</span><span class="c0 c4">&nbsp;</span><span class="c0 c3"><a class="c1" href="https://devcenter.heroku.com/articles/deploying-spring-boot-apps-to-heroku">this case</a></span><span class="c0 c4">&nbsp;</span><span class="c10 c0">for Spring boot. Once the
+						GitHub account is integrated, it is possible to enable automatic deployment, allowing an update and rebuild of the application with each new GitHub commit triggered in Your IDE or using Your command line.</span></p>
+				<p class="c7"><span class="c10 c0"></span></p>
+				<p class="c2"><span class="c10 c0"></span></p>
+				<p class="c2"><span class="c10 c0"></span></p>
+				<hr class="c14">
+				<div>
+					<p class="c5"><a href="#ftnt_ref1" id="ftnt1">[1]</a><span class="c6">&nbsp;</span><span class="c6 c3"><a class="c1" href="https://blog.logrocket.com/state-of-javascript-what-are-the-most-in-demand-frontend-frameworks-in-2020">https://blog.logrocket.com/state-of-javascript-what-are-the-most-in-demand-frontend-frameworks-in-2020</a></span></p>
+				</div>
+				<div>
+					<p class="c5"><a href="#ftnt_ref2" id="ftnt2">[2]</a><span class="c6">&nbsp;</span><span class="c6 c3"><a class="c1" href="https://programmingwithmosh.com/javascript/top-frontend-frameworks-to-learn-in-2020">https://programmingwithmosh.com/javascript/top-frontend-frameworks-to-learn-in-2020/</a></span></p>
+				</div>
+				<div>
+					<p class="c5"><a href="#ftnt_ref3" id="ftnt3">[3]</a><span class="c6">&nbsp;</span><span class="c3 c6"><a class="c1" href="https://www.simform.com/best-frontend-frameworks/;">https://www.simform.com/best-frontend-frameworks/</a></span></p>
+				</div>
+				<div>
+					<p class="c5"><a href="#ftnt_ref4" id="ftnt4">[4]</a><span class="c6">&nbsp;</span><span class="c6 c3"><a class="c1" href="https://www.gurutechnolabs.com/top-front-end-frameworks/">https://www.gurutechnolabs.com/top-front-end-frameworks/</a></span></p>
+					<p class="c5 c21"><span class="c15 c6"></span></p>
+				</div>
+			</span>
+		</div>
+		<div class="col"></div>
+	</div>
+</div>
