@@ -18,7 +18,6 @@ import { ContextMenuModule } from 'primeng/contextmenu';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
-import { ProgressBarModule } from 'primeng/progressbar';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -40,9 +39,9 @@ import { BrokerBaseComponent } from './protected/entities/party/broker-base/brok
 import { BusinessOverviewComponent } from './protected/entities/party/business-overview/business-overview.component';
 import { FinStmtComponent } from './protected/entities/party/fin-stmt/fin-stmt.component';
 import { BusinessNewComponent } from './protected/entities/party/business-new/business-new.component';
-import { PosListLiabComponent } from './protected/entities/pos/pos-list-liab/pos-list-liab.component';
-import { PosListAssetComponent } from './protected/entities/pos/pos-list-asset/pos-list-asset.component';
-import { PosFinancingComponent } from './protected/entities/pos/pos-financing/pos-financing.component';
+import { PosListLiabComponent } from './protected/entities/pos/liab/pos-list-liab/pos-list-liab.component';
+import { PosListAssetComponent } from './protected/entities/pos/asset/pos-list-asset/pos-list-asset.component';
+import { PosFinancingBaseComponent } from './protected/entities/pos/liab/pos-financing-base/pos-financing-base.component';
 
 
 @NgModule({
@@ -66,7 +65,7 @@ import { PosFinancingComponent } from './protected/entities/pos/pos-financing/po
     BusinessNewComponent,
     PosListLiabComponent,
     PosListAssetComponent,
-    PosFinancingComponent
+    PosFinancingBaseComponent
   ],
   imports: [
     CommonModule,

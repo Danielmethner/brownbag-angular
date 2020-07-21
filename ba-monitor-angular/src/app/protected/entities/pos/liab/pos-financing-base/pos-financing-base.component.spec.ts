@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PosFinancingComponent } from './pos-financing.component';
+import { PosFinancingBaseComponent } from './pos-financing-base.component';
 
-describe('PosFinancingComponent', () => {
-  let component: PosFinancingComponent;
-  let fixture: ComponentFixture<PosFinancingComponent>;
+describe('PosFinancingBaseComponent', () => {
+  let component: PosFinancingBaseComponent;
+  let fixture: ComponentFixture<PosFinancingBaseComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PosFinancingComponent ]
+      declarations: [ PosFinancingBaseComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PosFinancingComponent);
+    fixture = TestBed.createComponent(PosFinancingBaseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

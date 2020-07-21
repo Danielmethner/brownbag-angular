@@ -25,13 +25,13 @@ export class PosListAssetComponent implements OnInit {
 
 
     this.cols = [
-      { field: 'id', header: 'ID', filter: true },
-      { field: 'assetName', header: 'Asset', filter: true },
-      { field: 'qty', header: 'Qty', filter: true },
-      { field: 'qtyBlocked', header: 'Qty Blocked', filter: true },
-      { field: 'priceAvg', header: 'Avg Price', filter: true },
-      { field: 'priceLast', header: 'Last Price', filter: true },
-      { field: 'profitLoss', header: 'P/ L' }
+      { field: 'id', header: 'ID', filter: true, classes: 'text-center max-width-20px', type: 'integer' },
+      { field: 'assetName', header: 'Asset', filter: true, classes: 'text-left', type: 'text' },
+      { field: 'qty', header: 'Qty', filter: true, classes: 'text-right', type: 'double' },
+      { field: 'qtyBlocked', header: 'Qty Blocked', filter: true, classes: 'text-right', type: 'double' },
+      { field: 'priceAvg', header: 'Avg Price', filter: true, classes: 'text-right', type: 'currency' },
+      { field: 'priceLast', header: 'Last Price', filter: true, classes: 'text-right', type: 'currency' },
+      { field: 'profitLoss', header: 'P/ L', filter: false, classes: 'text-right', type: 'percent' }
     ];
 
     this.multiSortMeta = [{ field: 'id', order: 1 }];
