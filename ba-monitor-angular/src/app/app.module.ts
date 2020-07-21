@@ -1,11 +1,26 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {MatTableModule} from '@angular/material/table';
+
+import { TableModule } from 'primeng/table';
+import { InputTextModule } from 'primeng/inputtext';
+import { ToastModule } from 'primeng/toast';
+import { CalendarModule } from 'primeng/calendar';
+import { SliderModule } from 'primeng/slider';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
+import { ProgressBarModule } from 'primeng/progressbar';
+
+import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { NavbarComponent } from './navbar/navbar.component';
@@ -28,7 +43,7 @@ import { BusinessNewComponent } from './protected/entities/party/business-new/bu
 import { PosListLiabComponent } from './protected/entities/pos/pos-list-liab/pos-list-liab.component';
 import { PosListAssetComponent } from './protected/entities/pos/pos-list-asset/pos-list-asset.component';
 import { PosFinancingComponent } from './protected/entities/pos/pos-financing/pos-financing.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -56,12 +71,22 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     CommonModule,
     BrowserModule,
+    BrowserAnimationsModule,
+    TableModule,
+    CalendarModule,
+    SliderModule,
+    DialogModule,
+    MultiSelectModule,
+    ContextMenuModule,
+    DropdownModule,
+    ButtonModule,
+    ToastModule,
+    InputTextModule,
     FormsModule,
     NgbModule,
-    MatTableModule,
     AppRoutingModule,
     FontAwesomeModule,
-    NoopAnimationsModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

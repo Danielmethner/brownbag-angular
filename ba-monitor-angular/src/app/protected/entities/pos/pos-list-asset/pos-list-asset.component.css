@@ -1,3 +1,12 @@
-table {
-  width: 100%;
+p-sortIcon {
+  color: white ! important;
+}
+
+.bg-table-head {
+  background-color: skyblue !important;
+}
+
+:host /deep/ .customformat {
+  text-align: right;
+  color: black;
 }
