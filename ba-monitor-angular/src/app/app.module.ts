@@ -42,6 +42,9 @@ import { BusinessNewComponent } from './protected/entities/party/business-new/bu
 import { PosListLiabComponent } from './protected/entities/pos/liab/pos-list-liab/pos-list-liab.component';
 import { PosListAssetComponent } from './protected/entities/pos/asset/pos-list-asset/pos-list-asset.component';
 import { PosFinancingBaseComponent } from './protected/entities/pos/liab/pos-financing-base/pos-financing-base.component';
+import { NewOrderLoanComponent } from './protected/entities/order/loan/new-order-loan/new-order-loan.component';
+import { NewOrderBondIpoComponent } from './protected/entities/order/loan/new-order-bond-ipo/new-order-bond-ipo.component';
+import { NewOrderShareIpoComponent } from './protected/entities/order/loan/new-order-share-ipo/new-order-share-ipo.component';
 
 
 @NgModule({
@@ -65,7 +68,10 @@ import { PosFinancingBaseComponent } from './protected/entities/pos/liab/pos-fin
     BusinessNewComponent,
     PosListLiabComponent,
     PosListAssetComponent,
-    PosFinancingBaseComponent
+    PosFinancingBaseComponent,
+    NewOrderLoanComponent,
+    NewOrderBondIpoComponent,
+    NewOrderShareIpoComponent
   ],
   imports: [
     CommonModule,
