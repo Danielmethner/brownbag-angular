@@ -1,1 +1,82 @@
-<p>new-order-bond-ipo works!</p>
+<div id="content" class="row justify-content-md-center">
+	<div class="col-md-5">
+		<div class="row">
+			<div class="col-md-12 text-center"></div>
+		</div>
+
+		<div class="card p-4 bg-light">
+			<div class="form-group row">
+				<div class="col-md-12">
+					<label for="inputAddress">Issuing Party</label>
+					<label readonly type="text" class="form-control" id="party">{{orderStex.partyName}}</label>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-12">
+					<label for="qty">Quantity</label>
+					<input type="number" min="0" class="form-control" id="qty" placeholder="0,00" />
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-12">
+					<label for="inputPrice" v-b-tooltip.hover title="Price at which the bond will have to be repayed upon maturity">
+						Nominal Value
+						<b>*</b>
+					</label>
+					<input type="number" min="0" step="0.01" class="form-control" id="price" placeholder="0.00" />
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-12">
+					<label for="inputPrice">
+						Price Limit
+						<b>*</b>
+					</label>
+					<input type="number" min="0" step="0.01" class="form-control" id="price" placeholder="0.00" />
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-12">
+					<label for="orderAmount">Total Nominal Amount</label>
+					<label readonly type="text" class="form-control" id="orderAmount">{{orderStex.qty | currency:'USD'}}</label>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-12">
+					<label for="inputPrice">Interest Rate [%]</label>
+					<input type="number" min="0" step="0.01" class="form-control" id="price" placeholder="0.00" v-model="orderStex.intrRate" />
+				</div>
+				<div class="col-md-12">
+					<label for="inputPrice" v-b-tooltip.hover title="Coupon = Total Nominal Value * Interest Rate">
+						Annual Coupon
+						<b>*</b>
+					</label>
+					<label readonly type="text" class="form-control" id="orderAmount">{{coupon | currency:'USD'}}</label>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-12">
+					<label for="orderAmount">Maturity</label>
+					<!-- <b-form-datepicker class="mb-2" :min="minMatDate" :value-as-date="true"></b-form-datepicker> -->
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label type="text" class="submit-feedback">{{status}}</label>
+			</div>
+			<div class="form-group row">
+				<div class="col-6">
+					<button class="btn btn-primary btn-block">
+						<!-- <b-spinner small></b-spinner> -->
+						Place Order
+					</button>
+				</div>
+				<div class="col-6">
+					<button class="btn btn-dark btn-block">Clear Form</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

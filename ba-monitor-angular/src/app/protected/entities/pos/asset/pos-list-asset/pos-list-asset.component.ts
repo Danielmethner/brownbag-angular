@@ -18,8 +18,9 @@ export class PosListAssetComponent implements OnInit {
   constructor(private objPosService: ObjPosService) {
   }
 
-  ngOnInit() {
-    this.objPosService.getPosList().subscribe(posList =>
+  ngOnInit(): void {
+    const partyId = 7;
+    this.objPosService.getPosListByPartyId(partyId).subscribe(posList =>
       this.posList = posList
     );
 

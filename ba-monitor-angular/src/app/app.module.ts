@@ -10,9 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
-import { ToastModule } from 'primeng/toast';
 import { CalendarModule } from 'primeng/calendar';
-import { SliderModule } from 'primeng/slider';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ContextMenuModule } from 'primeng/contextmenu';
 import { DialogModule } from 'primeng/dialog';
@@ -45,6 +43,8 @@ import { PosFinancingBaseComponent } from './protected/entities/pos/liab/pos-fin
 import { NewOrderLoanComponent } from './protected/entities/order/loan/new-order-loan/new-order-loan.component';
 import { NewOrderBondIpoComponent } from './protected/entities/order/loan/new-order-bond-ipo/new-order-bond-ipo.component';
 import { NewOrderShareIpoComponent } from './protected/entities/order/loan/new-order-share-ipo/new-order-share-ipo.component';
+import { PosTrxComponent } from './protected/entities/pos/pos-trx/pos-trx.component';
+import { OrderStexListComponent } from './protected/entities/order/stex/order-stex-list/order-stex-list.component';
 
 
 @NgModule({
@@ -71,7 +71,9 @@ import { NewOrderShareIpoComponent } from './protected/entities/order/loan/new-o
     PosFinancingBaseComponent,
     NewOrderLoanComponent,
     NewOrderBondIpoComponent,
-    NewOrderShareIpoComponent
+    NewOrderShareIpoComponent,
+    PosTrxComponent,
+    OrderStexListComponent
   ],
   imports: [
     CommonModule,
@@ -79,13 +81,11 @@ import { NewOrderShareIpoComponent } from './protected/entities/order/loan/new-o
     BrowserAnimationsModule,
     TableModule,
     CalendarModule,
-    SliderModule,
     DialogModule,
     MultiSelectModule,
     ContextMenuModule,
     DropdownModule,
     ButtonModule,
-    ToastModule,
     InputTextModule,
     FormsModule,
     NgbModule,

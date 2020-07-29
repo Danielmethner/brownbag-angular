@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { ControlService } from '@services/control.service';
+import { PartyService } from '@services/party.service';
+import { FinStmt } from '@models/FinStmt';
 @Component({
   selector: 'app-fin-stmt',
   templateUrl: './fin-stmt.component.html',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinStmtComponent implements OnInit {
 
-  constructor() { }
+  @Input() stmtType: string;
+  finStmtList: FinStmt[];
+
+  constructor(private controlService: ControlService, private partyService: PartyService) { }
 
   ngOnInit(): void {
+    this.getFinStmt(7, this.stmtType);
   }
+  showFinStmtList(finStmtList: FinStmt[]): void {
+    this.finStmtList = finStmtList;
+  }
+  getFinStmt(partyId: number, finStmtType: string): void {
 
+    this.controlService.getFinYear().subscribe(finYear => {
+
+      const currentYear = finYear;
+      this.partyService.getFinStmtByPartyIdAndFinYearAndFinStmtTypeHist(
+        partyId,
+        currentYear,
+        finStmtType,
+        2
+      ).subscribe(finStmtList => {
+        this.showFinStmtList(finStmtList);
+      });
+    });
+  }
 }

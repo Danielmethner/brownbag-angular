@@ -1,0 +1,32 @@
+<div class="col-md-12 padding-top-1em">
+	<p-table class="table-borderless" #dt [autoLayout]="true" [columns]="cols" [value]="orderStexList" [paginator]="orderStexList ? orderStexList.length >10: false" [rows]="10" sortMode="multiple"
+		[multiSortMeta]="multiSortMeta">
+		<ng-template pTemplate="header" let-columns class="bg-info">
+			<tr class="">
+				<th class="bg-info text-light" *ngFor="let col of columns" [pSortableColumn]="col.field">
+					<fa-icon [icon]="faSort" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon> {{col.header}}
+				</th>
+			</tr>
+			<tr>
+				<th class="bg-info text-center" *ngFor="let col of columns" [ngSwitch]="col.field">
+					<input *ngIf="col.filter" pInputText type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+				</th>
+			</tr>
+		</ng-template>
+		<ng-template class="table-hover table-borderless" pTemplate="body" let-rowData let-columns="columns">
+			<tr class="table-hover table-borderless">
+				<td [ngClass]="col.classes" class="table-hover table-borderless" *ngFor="let col of columns">
+					<div *ngIf="['integer', 'text'].indexOf(col.type) > -1">{{rowData[col.field] }}</div>
+					<div *ngIf="col.type=='buy-sell'" class="font-weight-bold">{{rowData[col.field]  }}</div>
+					<div *ngIf="col.type=='double'">{{rowData[col.field]| number  }}</div>
+					<div *ngIf="col.type=='currency'">{{rowData[col.field]| currency:'USD'  }}</div>
+					<div *ngIf="col.type=='date'">{{rowData[col.field]| date  }}</div>
+					<div *ngIf="col.type=='percent'">
+						<span [ngClass]="rowData[col.field] > 0 ? 'text-success' : (rowData[col.field] < 0 ? 'text-danger' : 'text-dark')">{{rowData[col.field] / 100 | percent:'0.2' }}</span>
+					</div>
+
+				</td>
+			</tr>
+		</ng-template>
+	</p-table>
+</div>

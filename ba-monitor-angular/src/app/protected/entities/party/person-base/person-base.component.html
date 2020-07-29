@@ -5,7 +5,18 @@
 
   <div>
     <ul ngbNav #nav="ngbNav" class="nav-tabs">
-      <li [ngbNavItem]="1" *ngIf="false">
+
+      <li [ngbNavItem]="3">
+        <a ngbNavLink>
+          <fa-icon [icon]="faExchangeAlt" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Transactions</span>
+        </a>
+        <ng-template ngbNavContent>
+          <div class="justify-content-center">
+            <app-pos-trx></app-pos-trx>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="1">
         <a ngbNavLink>
           <fa-icon [icon]="faChartPie" [styles]="{ 'color': 'black'}"></fa-icon> <span class="text-dark"> Portfolio </span>
         </a>
@@ -25,23 +36,13 @@
           </div>
         </ng-template>
       </li>
-      <li [ngbNavItem]="3">
-        <a ngbNavLink>
-          <fa-icon [icon]="faExchangeAlt" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Transactions</span>
-        </a>
-        <ng-template ngbNavContent>
-          <div class="justify-content-center">
-            <app-pos-list-asset></app-pos-list-asset>
-          </div>
-        </ng-template>
-      </li>
       <li [ngbNavItem]="4">
         <a ngbNavLink>
           <fa-icon [icon]="faList" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Orders</span>
         </a>
         <ng-template ngbNavContent>
           <div class="justify-content-center">
-            <app-pos-list-asset></app-pos-list-asset>
+            <app-order-stex-list></app-order-stex-list>
           </div>
         </ng-template>
       </li>
@@ -51,7 +52,17 @@
         </a>
         <ng-template ngbNavContent>
           <div class="justify-content-center">
-            <app-pos-list-asset></app-pos-list-asset>
+            <app-fin-stmt [stmtType]="'BAL_SHEET'"></app-fin-stmt>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="6">
+        <a ngbNavLink>
+          <fa-icon [icon]="faColumns" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Income Statement</span>
+        </a>
+        <ng-template ngbNavContent>
+          <div class="justify-content-center">
+            <app-fin-stmt [stmtType]="'INCOME_STMT'"></app-fin-stmt>
           </div>
         </ng-template>
       </li>

@@ -4,6 +4,7 @@ import { ObjPos } from '@models/ObjPos';
 import { ObjPosLoan } from '@models/ObjPosLoan';
 import { Observable } from 'rxjs';
 import { environment } from '@env/environment';
+import { Booking } from '@models/Booking';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +13,15 @@ export class ObjPosService {
 
   constructor(private http: HttpClient) { }
 
-  getPosList(): Observable<ObjPos[]> {
-    return this.http.get<ObjPos[]>(environment.apiBaseUrl + '/api/pos/party/7');
+  getPosListByPartyId(partyId: number): Observable<ObjPos[]> {
+    return this.http.get<ObjPos[]>(environment.apiBaseUrl + '/api/pos/party/' + partyId);
   }
 
   getPosLoanByPartyId(): Observable<ObjPosLoan[]> {
     return this.http.get<ObjPosLoan[]>(environment.apiBaseUrl + '/api/pos/financing/party/7');
   }
 
-
+  getBookingByPartyIdAndPosId(partyId: number, posId: number): Observable<Booking[]> {
+    return this.http.get<Booking[]>(environment.apiBaseUrl + '/api/pos/bookings/party/' + partyId + '/pos/' + posId);
+  }
 }

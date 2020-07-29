@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { OrderStex } from '@models/OrderStex';
 @Component({
   selector: 'app-new-order-bond-ipo',
   templateUrl: './new-order-bond-ipo.component.html',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewOrderBondIpoComponent implements OnInit {
 
+
+  orderStex: OrderStex;
+  status: string;
+  coupon:number;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.orderStex = new OrderStex();
   }
 
 }

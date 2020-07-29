@@ -1,1 +1,27 @@
-<p>fin-stmt works!</p>
+<div class="row justify-content-md-center">
+  <div [ngClass]="finStmtList.length >1 ? 'col' : 'col-md-10'" *ngFor="let finStmt of finStmtList">
+    <h3>{{ finStmt.name }}</h3>
+    <div *ngFor="let section of finStmt.sections">
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr [ngClass]="section.style">
+            <th class="col-md-8">{{section.section}}</th>
+            <th class="col-md-2 text-right">{{finStmt.finYear}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of section.items">
+            <td class="col-md-8">{{item.itemTypeName}}</td>
+            <td class="col-md-4 text-right">{{item.qty | currency:'USD'}}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="table-active">
+            <th class="col-md-8">{{section.totalCaption}}</th>
+            <th class="col-md-8 text-right">{{section.totalQty | currency:'USD'}}</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
