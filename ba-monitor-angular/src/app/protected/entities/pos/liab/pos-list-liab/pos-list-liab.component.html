@@ -1,4 +1,4 @@
-<p-table class="table-borderless" #dt [autoLayout]="true" [columns]="cols" [value]="posList" [paginator]="true" [rows]="10" sortMode="multiple" [multiSortMeta]="multiSortMeta">
+<p-table class="table-borderless padding-top-1em" #dt [autoLayout]="true" [columns]="cols" [value]="posList" [paginator]="true" [rows]="10" sortMode="multiple" [multiSortMeta]="multiSortMeta">
 	<ng-template pTemplate="header" let-columns class="bg-info">
 		<tr class="">
 			<th class="bg-info text-light" *ngFor="let col of columns" [pSortableColumn]="col.field">

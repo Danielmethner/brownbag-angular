@@ -1,0 +1,11 @@
+.justify-content-center {
+  padding: 1em;
+}
+
+.nav-tabs{
+	padding: 1em;
+}
+
+.active{
+	font-weight: bold;
+}

@@ -6,16 +6,6 @@
   <div>
     <ul ngbNav #nav="ngbNav" class="nav-tabs">
 
-      <li [ngbNavItem]="3">
-        <a ngbNavLink>
-          <fa-icon [icon]="faExchangeAlt" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Transactions</span>
-        </a>
-        <ng-template ngbNavContent>
-          <div class="justify-content-center">
-            <app-pos-trx></app-pos-trx>
-          </div>
-        </ng-template>
-      </li>
       <li [ngbNavItem]="1">
         <a ngbNavLink>
           <fa-icon [icon]="faChartPie" [styles]="{ 'color': 'black'}"></fa-icon> <span class="text-dark"> Portfolio </span>
@@ -33,6 +23,16 @@
         <ng-template ngbNavContent>
           <div class="justify-content-center">
             <app-pos-financing-base></app-pos-financing-base>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="3">
+        <a ngbNavLink>
+          <fa-icon [icon]="faExchangeAlt" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Transactions</span>
+        </a>
+        <ng-template ngbNavContent>
+          <div class="justify-content-center">
+            <app-pos-trx></app-pos-trx>
           </div>
         </ng-template>
       </li>
@@ -66,13 +66,14 @@
           </div>
         </ng-template>
       </li>
-      <li [ngbNavItem]="6">
+
+      <li [ngbNavItem]="7">
         <a ngbNavLink>
           <fa-icon [icon]="faFile" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> New Order</span>
         </a>
         <ng-template ngbNavContent>
           <div class="justify-content-center">
-            <app-pos-list-asset></app-pos-list-asset>
+            <app-new-order-stex></app-new-order-stex>
           </div>
         </ng-template>
       </li>

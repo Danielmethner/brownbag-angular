@@ -1,73 +1,58 @@
- <div id="content" class="row justify-content-md-center">
-    <div class="col-md-5">
-      <div class="row">
-        <div class="col-md-12 text-center"></div>
+<div id="content" class="row justify-content-md-center">
+  <div class="col-md-5">
+    <div class="row">
+      <div class="col-md-12 text-center">
+
+      </div>
+    </div>
+
+    <div class="card p-4 bg-light">
+      <div class="form-group row">
+        <div class="col-md-12 text-center">
+          <h2>Issue Shares</h2>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-12">
+          <label for="inputAddress">Issuing Party</label>
+          <label readonly type="text" class="form-control" id="party">{{orderStex.partyName}}</label>
+        </div>
       </div>
 
-      <div class="row">
+      <div class="form-group row">
         <div class="col-md-12">
-          <div class="card p-4 bg-light">
-            <div class="form-group row">
-              <div class="form-group col">
-                <label for="inputAddress">Issuing Party</label>
-                <label readonly type="text" class="form-control" id="party">{{orderStex.partyName}}</label>
-              </div>
-            </div>
+          <label for="qty">Quantity</label>
+          <input type="number" min="0" class="form-control" id="qty" placeholder="0,00" />
+        </div>
+      </div>
 
-            <div class="form-group row">
-              <div class="form-group col">
-                <label for="qty">Quantity</label>
-                <input
-                  type="number"
-                  min="0"
-                  class="form-control"
-                  id="qty"
-                  placeholder="0,00" 
-                />
-              </div>
-            </div>
+      <div class="form-group row">
+        <div class="col-md-12">
+          <label for="inputPrice">Limit Price</label>
+          <input type="number" min="0" step="0.01" class="form-control" id="price" placeholder="0.00" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-12">
+          <label for="orderAmount">Order Amount</label>
+          <label readonly type="text" class="form-control" id="orderAmount">{{orderStex.qty | currency:'USD'}}</label>
+        </div>
+      </div>
 
-            <div class="form-group row">
-              <div class="form-group col">
-                <label for="inputPrice">Limit Price</label>
-                <input
-                  type="number"
-                  min="0"
-                  step="0.01"
-                  class="form-control"
-                  id="price"
-                  placeholder="0.00" 
-                />
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="form-group col">
-                <label for="orderAmount">Order Amount</label>
-                <label
-                  readonly
-                  type="text"
-                  class="form-control"
-                  id="orderAmount"
-                >{{orderStex.qty | currency:'USD'}}</label>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label type="text" class="submit-feedback">{{status}}</label>
-            </div>
-            <div class="form-group row">
-              <div class="form-group col-6">
-                <button  class="btn btn-primary btn-block">
-				  <!-- <b-spinner small v-if="loading"></b-spinner> -->
-				  Place Order
-                </button>
-              </div>
-              <div class="form-group col-6">
-                <button class="btn btn-dark btn-block">Clear Form</button>
-              </div>
-            </div>
-          </div>
+      <div class="form-group row">
+        <label type="text" class="submit-feedback">{{status}}</label>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-6">
+          <button class="btn btn-primary btn-block">
+            <!-- <b-spinner small v-if="loading"></b-spinner> -->
+            Place Order
+          </button>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-dark btn-block">Clear Form</button>
         </div>
       </div>
     </div>
   </div>
+</div>

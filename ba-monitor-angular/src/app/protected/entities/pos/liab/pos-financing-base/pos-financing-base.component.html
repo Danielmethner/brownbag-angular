@@ -3,15 +3,15 @@
 
 
 		<li [ngbNavItem]="1">
-			<a ngbNavLink>Present Financing</a>
+			<a ngbNavLink class="text-dark">Present Financing</a>
 			<ng-template ngbNavContent>
-				<div class="">
+				<div class="justify-content-center">
 					<app-pos-list-liab></app-pos-list-liab>
 				</div>
 			</ng-template>
 		</li>
 		<li [ngbNavItem]="2">
-			<a ngbNavLink>Loan Application</a>
+			<a ngbNavLink class="text-dark">Loan Application</a>
 			<ng-template ngbNavContent>
 				<div class="justify-content-center">
 					<app-new-order-loan></app-new-order-loan>
@@ -19,15 +19,15 @@
 			</ng-template>
 		</li>
 		<li [ngbNavItem]="3">
-			<a ngbNavLink>Bond Issuance</a>
+			<a ngbNavLink class="text-dark">Bond Issuance</a>
 			<ng-template ngbNavContent>
-				<div class="">
+				<div class="justify-content-center">
 					<app-new-order-bond-ipo></app-new-order-bond-ipo>
 				</div>
 			</ng-template>
 		</li>
 		<li [ngbNavItem]="4">
-			<a ngbNavLink>Share Issuance</a>
+			<a ngbNavLink class="text-dark">Share Issuance</a>
 			<ng-template ngbNavContent>
 				<div class="justify-content-center">
 					<app-new-order-share-ipo></app-new-order-share-ipo>

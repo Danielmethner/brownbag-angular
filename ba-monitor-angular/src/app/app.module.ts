@@ -45,6 +45,7 @@ import { NewOrderBondIpoComponent } from './protected/entities/order/loan/new-or
 import { NewOrderShareIpoComponent } from './protected/entities/order/loan/new-order-share-ipo/new-order-share-ipo.component';
 import { PosTrxComponent } from './protected/entities/pos/pos-trx/pos-trx.component';
 import { OrderStexListComponent } from './protected/entities/order/stex/order-stex-list/order-stex-list.component';
+import { NewOrderStexComponent } from './protected/entities/order/stex/new-order-stex/new-order-stex.component';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { OrderStexListComponent } from './protected/entities/order/stex/order-st
     NewOrderBondIpoComponent,
     NewOrderShareIpoComponent,
     PosTrxComponent,
-    OrderStexListComponent
+    OrderStexListComponent,
+    NewOrderStexComponent
   ],
   imports: [
     CommonModule,
