@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '@env/environment';
 import { FinStmt } from '@models/FinStmt';
-
+import { ObjParty } from '@models/ObjParty';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PartyService {
+export class ObjPartyService {
 
   constructor(private http: HttpClient) { }
   getLogs(): Observable<number> {
@@ -16,32 +16,32 @@ export class PartyService {
       (environment.apiBaseUrl + '/api/settings/log/recent');
   }
 
-  getOwnerShipList(partyId: number): Observable<number> {
-    return this.http.get<number>(environment.apiBaseUrl + '/api/party/' + partyId + '/ownership');
+  getOwnershipList(partyId: number): Observable<ObjParty> {
+    return this.http.get<ObjParty>(environment.apiBaseUrl + '/api/party/' + partyId + '/ownership');
   }
 
-  getCredFacility(partyId: number): Observable<number> {
-    return this.http.get<number>(environment.apiBaseUrl + '/api/party/cred-facility/party/' + partyId);
+  getCredFacility(partyId: number): Observable<ObjParty> {
+    return this.http.get<ObjParty>(environment.apiBaseUrl + '/api/party/cred-facility/party/' + partyId);
   }
 
-  createParty(party: number): Observable<number> {
-    return this.http.post<number>(environment.apiBaseUrl + '/api/party/legalperson/create', party);
+  createParty(party: number): Observable<ObjParty> {
+    return this.http.post<ObjParty>(environment.apiBaseUrl + '/api/party/legalperson/create', party);
   }
 
-  getLegalPersonByOwnerUser(): Observable<number> {
-    return this.http.get<number>(environment.apiBaseUrl + '/api/party/user/legalpersonlist');
+  getLegalPersonByOwnerUser(): Observable<ObjParty> {
+    return this.http.get<ObjParty>(environment.apiBaseUrl + '/api/party/user/legalpersonlist');
   }
 
-  getAll(): Observable<number> {
-    return this.http.get<number>(environment.apiBaseUrl + '/api/party/all');
+  getAll(): Observable<ObjParty> {
+    return this.http.get<ObjParty>(environment.apiBaseUrl + '/api/party/all');
   }
 
-  getPrivatePerson(): Observable<number> {
-    return this.http.get<number>(environment.apiBaseUrl + '/api/party/priv');
+  getPrivatePerson(): Observable<ObjParty> {
+    return this.http.get<ObjParty>(environment.apiBaseUrl + '/api/party/priv');
   }
 
-  getById(partyId: number): Observable<number> {
-    return this.http.get<number>(environment.apiBaseUrl + '/api/party/' + partyId);
+  getById(partyId: number): Observable<ObjParty> {
+    return this.http.get<ObjParty>(environment.apiBaseUrl + '/api/party/' + partyId);
   }
 
   getAvblQty(partyId: number, assetId: number): Observable<number> {

@@ -1,1 +1,87 @@
-<p>business-base works!</p>
+<div>
+  <header class="jumbotron text-center">
+    <h1>Business Management</h1>
+  </header>
+  <div class="col-md-5 col-sd-10">
+    <p-dropdown [options]="businessList" placeholder="Select a Business" [(ngModel)]="selectedBusiness" (onChange)="onChangeParty(selectedBusiness)" [filter]="businessList.length >10" [style]="{'width':'100%'}">
+    </p-dropdown>
+  </div>
+  <div>
+    <ul ngbNav #nav="ngbNav" class="nav-tabs">
+
+      <li [ngbNavItem]="1">
+        <a ngbNavLink>
+          <fa-icon [icon]="faChartPie" [styles]="{ 'color': 'black'}"></fa-icon> <span class="text-dark"> Portfolio </span>
+        </a>
+        <ng-template ngbNavContent>
+          <div class="justify-content-center">
+            <app-pos-list-asset></app-pos-list-asset>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="2">
+        <a ngbNavLink>
+          <fa-icon [icon]="faCreditCard" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Financing</span>
+        </a>
+        <ng-template ngbNavContent>
+          <div class="justify-content-center">
+            <app-pos-financing-base></app-pos-financing-base>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="3">
+        <a ngbNavLink>
+          <fa-icon [icon]="faExchangeAlt" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Transactions</span>
+        </a>
+        <ng-template ngbNavContent>
+          <div class="justify-content-center">
+            <app-pos-trx></app-pos-trx>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="4">
+        <a ngbNavLink>
+          <fa-icon [icon]="faList" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Orders</span>
+        </a>
+        <ng-template ngbNavContent>
+          <div class="justify-content-center">
+            <app-order-stex-list></app-order-stex-list>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="5">
+        <a ngbNavLink>
+          <fa-icon [icon]="faColumns" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Balance Sheet</span>
+        </a>
+        <ng-template ngbNavContent>
+          <div class="justify-content-center">
+            <app-fin-stmt [stmtType]="'BAL_SHEET'"></app-fin-stmt>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="6">
+        <a ngbNavLink>
+          <fa-icon [icon]="faColumns" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Income Statement</span>
+        </a>
+        <ng-template ngbNavContent>
+          <div class="justify-content-center">
+            <app-fin-stmt [stmtType]="'INCOME_STMT'"></app-fin-stmt>
+          </div>
+        </ng-template>
+      </li>
+
+      <li [ngbNavItem]="7">
+        <a ngbNavLink>
+          <fa-icon [icon]="faFile" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> New Order</span>
+        </a>
+        <ng-template ngbNavContent>
+          <div class="justify-content-center">
+            <app-new-order-stex></app-new-order-stex>
+          </div>
+        </ng-template>
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  </div>
+
+</div>

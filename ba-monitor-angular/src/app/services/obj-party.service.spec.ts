@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PartyService } from './party.service';
+import { ObjPartyService } from './obj-party.service';
 
-describe('PartyService', () => {
-  let service: PartyService;
+describe('ObjPartyService', () => {
+  let service: ObjPartyService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(PartyService);
+    service = TestBed.inject(ObjPartyService);
   });
 
   it('should be created', () => {

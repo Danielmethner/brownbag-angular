@@ -8,7 +8,9 @@ import { LoginComponent } from './public/login/login.component';
 import { RegistrationComponent } from './public/registration/registration.component';
 import { UserProfileComponent } from './protected/entities/user/user-profile/user-profile.component';
 import { PersonBaseComponent } from './protected/entities/party/person-base/person-base.component';
-
+import { BusinessBaseComponent } from './protected/entities/party/business-base/business-base.component';
+import { MarketResearchComponent } from './protected/market-research/market-research.component';
+import { ControlPanelComponent } from './protected/control-panel/control-panel.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -18,7 +20,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'user-profile', component: UserProfileComponent },
-  { path: 'person-base', component: PersonBaseComponent },  
+  { path: 'person-base', component: PersonBaseComponent },
+  { path: 'business-base', component: BusinessBaseComponent },
+  { path: 'market-research', component: MarketResearchComponent },
+  { path: 'control-panel', component: ControlPanelComponent },
 ];
 
 @NgModule({

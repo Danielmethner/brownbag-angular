@@ -46,6 +46,8 @@ import { NewOrderShareIpoComponent } from './protected/entities/order/loan/new-o
 import { PosTrxComponent } from './protected/entities/pos/pos-trx/pos-trx.component';
 import { OrderStexListComponent } from './protected/entities/order/stex/order-stex-list/order-stex-list.component';
 import { NewOrderStexComponent } from './protected/entities/order/stex/new-order-stex/new-order-stex.component';
+import { MarketResearchComponent } from './protected/market-research/market-research.component';
+import { ControlPanelComponent } from './protected/control-panel/control-panel.component';
 
 
 @NgModule({
@@ -75,7 +77,9 @@ import { NewOrderStexComponent } from './protected/entities/order/stex/new-order
     NewOrderShareIpoComponent,
     PosTrxComponent,
     OrderStexListComponent,
-    NewOrderStexComponent
+    NewOrderStexComponent,
+    MarketResearchComponent,
+    ControlPanelComponent
   ],
   imports: [
     CommonModule,

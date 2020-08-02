@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ControlService } from '@services/control.service';
-import { PartyService } from '@services/party.service';
+import { ObjPartyService } from '@services/obj-party.service';
 import { FinStmt } from '@models/FinStmt';
 @Component({
   selector: 'app-fin-stmt',
@@ -12,7 +12,7 @@ export class FinStmtComponent implements OnInit {
   @Input() stmtType: string;
   finStmtList: FinStmt[];
 
-  constructor(private controlService: ControlService, private partyService: PartyService) { }
+  constructor(private controlService: ControlService, private objPartyService: ObjPartyService) { }
 
   ngOnInit(): void {
     this.getFinStmt(7, this.stmtType);
@@ -25,7 +25,7 @@ export class FinStmtComponent implements OnInit {
     this.controlService.getFinYear().subscribe(finYear => {
 
       const currentYear = finYear;
-      this.partyService.getFinStmtByPartyIdAndFinYearAndFinStmtTypeHist(
+      this.objPartyService.getFinStmtByPartyIdAndFinYearAndFinStmtTypeHist(
         partyId,
         currentYear,
         finStmtType,

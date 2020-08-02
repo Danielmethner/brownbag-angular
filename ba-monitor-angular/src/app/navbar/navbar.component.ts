@@ -19,9 +19,9 @@ export class NavbarComponent implements OnInit {
     { name: 'Data Privacy', destination: 'data-privacy' },
     { name: 'Imprint', destination: 'imprint' },
     { name: 'Personal Finance', destination: 'person-base', icon: faUser },
-    { name: 'Business Management', destination: '#', icon: faBuilding },
-    { name: 'Market Research', destination: '#', icon: faChartLine },
-    { name: 'Settings', destination: '#', icon: faSlidersH },
+    { name: 'Business Management', destination: 'business-base', icon: faBuilding },
+    { name: 'Market Research', destination: 'market-research', icon: faChartLine },
+    { name: 'Control Panel', destination: 'control-panel', icon: faSlidersH },
   ];
   constructor() { }
 
