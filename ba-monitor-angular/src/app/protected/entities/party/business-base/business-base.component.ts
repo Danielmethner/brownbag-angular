@@ -21,10 +21,17 @@ export class BusinessBaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.objPartyService.getLegalPersonByOwnerUser().subscribe(businessList => {
+      for (const business of businessList) {
+        this.businessList.push({ label: business.name, value: business });
+      }
+      this.selectedBusiness = businessList[0];
+
+    });
   }
 
   onChangeParty(selectedBusiness: ObjParty): void {
     this.selectedBusiness = selectedBusiness;
-    this.objPartyService.getLegalPersonByOwnerUser().subscribe(posList => { });
+
   }
 }

@@ -4,13 +4,14 @@ import { Observable } from 'rxjs';
 import { environment } from '@env/environment';
 import { FinStmt } from '@models/FinStmt';
 import { ObjParty } from '@models/ObjParty';
+import { ObjUserService } from '@services/obj-user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ObjPartyService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private objUserService: ObjUserService) { }
 
   getLogs(): Observable<number> {
     return this.http.get<number>
@@ -29,8 +30,8 @@ export class ObjPartyService {
     return this.http.post<ObjParty>(environment.apiBaseUrl + '/api/party/legalperson/create', party);
   }
 
-  getLegalPersonByOwnerUser(): Observable<ObjParty> {
-    return this.http.get<ObjParty>(environment.apiBaseUrl + '/api/party/user/legalpersonlist');
+  getLegalPersonByOwnerUser(): Observable<ObjParty[]> {
+    return this.http.get<ObjParty[]>(environment.apiBaseUrl + '/api/party/user/legalpersonlist', { headers: this.objUserService.getAuthHeader() });
   }
 
   getAll(): Observable<ObjParty> {
@@ -45,13 +46,7 @@ export class ObjPartyService {
     return JSON.parse(sessionStorage.getItem('userPerson'));
   }
   getPrivatePerson(): Observable<ObjParty> {
-    let usertoken = sessionStorage.getItem('usertoken');
-    if (usertoken) {
-      let authHeader = { Authorization: 'Bearer ' + usertoken };
-      return this.http.get<ObjParty>(environment.apiBaseUrl + '/api/party/priv', { headers: authHeader });
-    } else {
-      return null;
-    }
+    return this.http.get<ObjParty>(environment.apiBaseUrl + '/api/party/priv', { headers: this.objUserService.getAuthHeader() });
   }
 
   getById(partyId: number): Observable<ObjParty> {

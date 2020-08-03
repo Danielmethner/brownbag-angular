@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '@services/auth.service';
 import { ObjPartyService } from '@services/obj-party.service';
+import { ObjUserService } from '@services/obj-user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,16 +20,17 @@ export class LoginComponent implements OnInit {
   isLoading = false;
   message = null;
 
-  constructor(private router: Router, private authService: AuthService, private objPartyService: ObjPartyService) { }
+  constructor(private router: Router, private authService: AuthService, private objPartyService: ObjPartyService, private objUserService: ObjUserService) { }
 
   ngOnInit(): void {
   }
 
   onLogin(): void {
     this.isLoading = true;
-    this.authService.authenticate(this.user).subscribe(response => {
-      sessionStorage.setItem('usertoken', response.accessToken);
-      sessionStorage.setItem('user', JSON.stringify(response));
+    this.authService.authenticate(this.user).subscribe(objUser => {
+      
+      this.objUserService.saveUser(objUser);
+
       this.objPartyService.getPrivatePerson().subscribe(userPerson => {
         this.objPartyService.savePrivatePersonToSessionStorage(userPerson);
       });
