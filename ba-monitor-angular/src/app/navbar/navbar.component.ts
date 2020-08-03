@@ -31,17 +31,16 @@ export class NavbarComponent implements OnInit {
     { name: 'Logout', destination: 'logout', icon: faSignInAlt, protected: true },
   ];
 
-  constructor(private authService: AuthService) { }
+  constructor( private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
   toggleNavbar(): void {
-    // this.navbarOpen = true;
     this.navbarOpen = !this.navbarOpen;
   }
 
-  validateProtection(navItem: any) {
+  validateProtection(navItem: any): boolean {
     if (navItem.protected === true) {
       return this.authService.isUserLoggedIn();
     } else {

@@ -48,6 +48,7 @@ import { OrderStexListComponent } from './protected/entities/order/stex/order-st
 import { NewOrderStexComponent } from './protected/entities/order/stex/new-order-stex/new-order-stex.component';
 import { MarketResearchComponent } from './protected/market-research/market-research.component';
 import { ControlPanelComponent } from './protected/control-panel/control-panel.component';
+import { LogoutComponent } from './public/logout/logout.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { ControlPanelComponent } from './protected/control-panel/control-panel.c
     OrderStexListComponent,
     NewOrderStexComponent,
     MarketResearchComponent,
-    ControlPanelComponent
+    ControlPanelComponent,
+    LogoutComponent
   ],
   imports: [
     CommonModule,

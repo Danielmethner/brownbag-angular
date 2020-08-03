@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     this.isLoading = true;
     if (this.authService.authenticate(this.user.username, this.user.password)
     ) {
-      this.router.navigate([''])
+      this.router.navigate(['person-base']);
     } else {
       this.message = 'login failed';
       this.isLoading = false;

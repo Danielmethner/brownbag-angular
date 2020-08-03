@@ -21,7 +21,7 @@
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item" *ngFor="let navItem of navItemsRight">
 				<a *ngIf="validateProtection(navItem)" class="nav-link" routerLink="{{navItem.destination}}" (click)="toggleNavbar()">
-					<fa-icon [icon]="navItem.icon" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon> {{navItem.name}}
+					<fa-icon [icon]=" navItem.icon" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon> {{navItem.name}}
 				</a>
 			</li>
 		</ul>
