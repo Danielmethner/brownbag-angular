@@ -11,7 +11,7 @@
 	<div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item" *ngFor="let navItem of navItems">
-				<a class="nav-link" routerLink="{{navItem.destination}}" (click)="toggleNavbar()">
+				<a *ngIf="validateProtection(navItem)" class="nav-link" routerLink="{{navItem.destination}}" (click)="toggleNavbar()">
 					<fa-icon *ngIf="navItem.icon" [icon]="navItem.icon" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon> {{navItem.name}}
 				</a>
 			</li>
@@ -19,15 +19,11 @@
 	</div>
 	<div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
 		<ul class="navbar-nav ml-auto">
-			<li class="nav-item"><a class="nav-link" routerLink="user-profile" (click)="toggleNavbar()">
-					<fa-icon [icon]="faUserCircle" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon> Profile
-				</a></li>
-			<li class="nav-item"><a class="nav-link" routerLink="login" (click)="toggleNavbar()">
-					<fa-icon [icon]="faSignInAlt" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon> Login
-				</a></li>
-			<li class="nav-item"><a class="nav-link" routerLink="registration" (click)="toggleNavbar()">
-					<fa-icon [icon]="faUserPlus" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon> Sign-up
-				</a></li>
+			<li class="nav-item" *ngFor="let navItem of navItemsRight">
+				<a *ngIf="validateProtection(navItem)" class="nav-link" routerLink="{{navItem.destination}}" (click)="toggleNavbar()">
+					<fa-icon [icon]="navItem.icon" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon> {{navItem.name}}
+				</a>
+			</li>
 		</ul>
 	</div>
 </nav>

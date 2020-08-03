@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faHome, faSignInAlt, faUserPlus, faSlidersH, faUser, faUserCircle, faBuilding, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from '@services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,15 +16,22 @@ export class NavbarComponent implements OnInit {
   faUserCircle = faUserCircle;
   faUser = faUser;
   navItems = [
-    { name: 'Technology Stack', destination: 'tech-stack' },
-    { name: 'Data Privacy', destination: 'data-privacy' },
-    { name: 'Imprint', destination: 'imprint' },
-    { name: 'Personal Finance', destination: 'person-base', icon: faUser },
-    { name: 'Business Management', destination: 'business-base', icon: faBuilding },
-    { name: 'Market Research', destination: 'market-research', icon: faChartLine },
-    { name: 'Control Panel', destination: 'control-panel', icon: faSlidersH },
+    { name: 'Technology Stack', destination: 'tech-stack', protected: false },
+    { name: 'Data Privacy', destination: 'data-privacy', protected: false },
+    { name: 'Imprint', destination: 'imprint', protected: false },
+    { name: 'Personal Finance', destination: 'person-base', icon: faUser, protected: true },
+    { name: 'Business Management', destination: 'business-base', icon: faBuilding, protected: true },
+    { name: 'Market Research', destination: 'market-research', icon: faChartLine, protected: true },
+    { name: 'Control Panel', destination: 'control-panel', icon: faSlidersH, protected: true },
   ];
-  constructor() { }
+  navItemsRight = [
+    { name: 'Profile', destination: 'user-profile', icon: faUserCircle, protected: true },
+    { name: 'Login', destination: 'login', icon: faSignInAlt, protected: false },
+    { name: 'Sign-up', destination: 'registration', icon: faUserPlus, protected: false },
+    { name: 'Logout', destination: 'logout', icon: faSignInAlt, protected: true },
+  ];
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -31,5 +39,13 @@ export class NavbarComponent implements OnInit {
   toggleNavbar(): void {
     // this.navbarOpen = true;
     this.navbarOpen = !this.navbarOpen;
+  }
+
+  validateProtection(navItem: any) {
+    if (navItem.protected === true) {
+      return this.authService.isUserLoggedIn();
+    } else {
+      return !this.authService.isUserLoggedIn();
+    }
   }
 }
