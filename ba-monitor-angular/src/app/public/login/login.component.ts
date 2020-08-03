@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '@services/auth.service';
+import { ObjPartyService } from '@services/obj-party.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,21 +19,27 @@ export class LoginComponent implements OnInit {
   isLoading = false;
   message = null;
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService, private objPartyService: ObjPartyService) { }
 
   ngOnInit(): void {
   }
 
   onLogin(): void {
     this.isLoading = true;
-    if (this.authService.authenticate(this.user.username, this.user.password)
-    ) {
-      this.router.navigate(['person-base']);
-    } else {
-      this.message = 'login failed';
-      this.isLoading = false;
-    }
+    this.authService.authenticate(this.user).subscribe(response => {
+      sessionStorage.setItem('usertoken', response.accessToken);
+      sessionStorage.setItem('user', JSON.stringify(response));
+      this.objPartyService.getPrivatePerson().subscribe(userPerson => {
+        this.objPartyService.savePrivatePersonToSessionStorage(userPerson);
+      });
 
+      this.router.navigate(['person-base']);
+      this.isLoading = false;
+
+    }, err => {
+      this.message = 'Login failed: ' + err.error.status + ' ' + err.error.error;
+      this.isLoading = false;
+    });
   }
 
   abortLogin(): void {

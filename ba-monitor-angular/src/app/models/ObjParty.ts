@@ -8,4 +8,5 @@ export interface ObjParty {
 	nomVal: number;
 	issuerId: number;
 	issuerName: string;
+	partyType: string;
 }

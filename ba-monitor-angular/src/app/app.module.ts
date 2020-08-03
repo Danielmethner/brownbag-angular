@@ -81,7 +81,7 @@ import { LogoutComponent } from './public/logout/logout.component';
     NewOrderStexComponent,
     MarketResearchComponent,
     ControlPanelComponent,
-    LogoutComponent
+    LogoutComponent,
   ],
   imports: [
     CommonModule,

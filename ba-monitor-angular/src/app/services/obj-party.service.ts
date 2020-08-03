@@ -11,6 +11,7 @@ import { ObjParty } from '@models/ObjParty';
 export class ObjPartyService {
 
   constructor(private http: HttpClient) { }
+
   getLogs(): Observable<number> {
     return this.http.get<number>
       (environment.apiBaseUrl + '/api/settings/log/recent');
@@ -36,8 +37,21 @@ export class ObjPartyService {
     return this.http.get<ObjParty>(environment.apiBaseUrl + '/api/party/all');
   }
 
+  savePrivatePersonToSessionStorage(userPerson: ObjParty): void {
+    sessionStorage.setItem('userPerson', JSON.stringify(userPerson));
+  }
+
+  getPrivatePersonFromSessionStorage(): ObjParty {
+    return JSON.parse(sessionStorage.getItem('userPerson'));
+  }
   getPrivatePerson(): Observable<ObjParty> {
-    return this.http.get<ObjParty>(environment.apiBaseUrl + '/api/party/priv');
+    let usertoken = sessionStorage.getItem('usertoken');
+    if (usertoken) {
+      let authHeader = { Authorization: 'Bearer ' + usertoken };
+      return this.http.get<ObjParty>(environment.apiBaseUrl + '/api/party/priv', { headers: authHeader });
+    } else {
+      return null;
+    }
   }
 
   getById(partyId: number): Observable<ObjParty> {

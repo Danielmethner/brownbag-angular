@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from '@env/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  authenticate(username: string, password: string): boolean {
-    if (username === 'U_TRADER_1' && password === 'U_TRADER_1') {
-      sessionStorage.setItem('username', username);
-      return true;
-    } else {
-      return false;
-    }
+  authenticate(user: any): Observable<any> {
+    return this.http.post<any>(environment.apiBaseUrl + '/api/auth/' + 'signin', {
+      username: user.username,
+      password: user.password
+    });
   }
 
   isUserLoggedIn(): boolean {
-    const user = sessionStorage.getItem('username');
-    console.log(user);
+    const user = sessionStorage.getItem('usertoken');
     return !(user === null);
   }
 
   logOut(): void {
-    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('usertoken');
   }
 }
