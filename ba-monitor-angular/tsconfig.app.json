@@ -27,9 +27,11 @@
       "@services/*": [
         "./app/services/*"
       ],
-      
       "@states/*": [
         "./app/state-management/*"
+      ],
+      "rxjs": [
+        "./vendor/rxjs.ts"
       ]
     }
   },
