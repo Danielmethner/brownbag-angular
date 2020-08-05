@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ObjParty } from '@models/ObjParty';
 
 @Component({
   selector: 'app-pos-financing-base',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pos-financing-base.component.css']
 })
 export class PosFinancingBaseComponent implements OnInit {
+
+  @Input() objParty: ObjParty;
 
   constructor() { }
 

@@ -17,8 +17,8 @@ export class ObjPosService {
     return this.http.get<ObjPos[]>(environment.apiBaseUrl + '/api/pos/party/' + partyId);
   }
 
-  getPosLoanByPartyId(): Observable<ObjPosLoan[]> {
-    return this.http.get<ObjPosLoan[]>(environment.apiBaseUrl + '/api/pos/financing/party/7');
+  getPosLoanByPartyId(partyId: number): Observable<ObjPosLoan[]> {
+    return this.http.get<ObjPosLoan[]>(environment.apiBaseUrl + '/api/pos/financing/party/' + partyId);
   }
 
   getBookingByPartyIdAndPosId(partyId: number, posId: number): Observable<Booking[]> {

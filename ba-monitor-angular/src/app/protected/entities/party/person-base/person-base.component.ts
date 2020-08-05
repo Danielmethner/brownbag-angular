@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faChartPie, faCreditCard, faExchangeAlt, faFile, faColumns, faList } from '@fortawesome/free-solid-svg-icons';
+import { ObjPartyService } from '@services/obj-party.service';
+import { ObjParty } from '@models/ObjParty';
+
 @Component({
   selector: 'app-person-base',
   templateUrl: './person-base.component.html',
@@ -10,10 +13,12 @@ export class PersonBaseComponent implements OnInit {
   faExchangeAlt = faExchangeAlt;
   faCreditCard = faCreditCard;
   faFile = faFile; faColumns = faColumns; faList = faList;
-  personName = 'Bernd';
-  constructor() { }
+  privatePerson: ObjParty;
+
+  constructor(private objPartyService: ObjPartyService) { }
 
   ngOnInit(): void {
+    this.privatePerson = this.objPartyService.getPrivatePersonFromSessionStorage();
   }
 
 }

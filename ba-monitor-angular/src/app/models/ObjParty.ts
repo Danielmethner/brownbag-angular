@@ -1,4 +1,4 @@
-export interface ObjParty {
+export class ObjParty {
 	id: number;
 	name: string;
 	isin: string;

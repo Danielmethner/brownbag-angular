@@ -2,20 +2,21 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ControlService } from '@services/control.service';
 import { ObjPartyService } from '@services/obj-party.service';
 import { FinStmt } from '@models/FinStmt';
+import { ObjParty } from '@models/ObjParty';
 @Component({
   selector: 'app-fin-stmt',
   templateUrl: './fin-stmt.component.html',
   styleUrls: ['./fin-stmt.component.css']
 })
 export class FinStmtComponent implements OnInit {
-
+  @Input() objParty: ObjParty;
   @Input() stmtType: string;
   finStmtList: FinStmt[];
 
   constructor(private controlService: ControlService, private objPartyService: ObjPartyService) { }
 
   ngOnInit(): void {
-    this.getFinStmt(7, this.stmtType);
+    this.getFinStmt(this.objParty.id, this.stmtType);
   }
   showFinStmtList(finStmtList: FinStmt[]): void {
     this.finStmtList = finStmtList;

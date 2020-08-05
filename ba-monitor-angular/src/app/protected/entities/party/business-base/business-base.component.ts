@@ -21,6 +21,7 @@ export class BusinessBaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.selectedBusiness = new ObjParty();
     this.objPartyService.getLegalPersonByOwnerUser().subscribe(businessList => {
       for (const business of businessList) {
         this.businessList.push({ label: business.name, value: business });

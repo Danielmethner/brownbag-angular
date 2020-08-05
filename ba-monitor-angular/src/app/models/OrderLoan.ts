@@ -1,5 +1,6 @@
 export class OrderLoan {
 	id: number;
+	partyId: number;
 	partyName: string;
 	qty: number;
 	credFacility: number;
@@ -7,7 +8,3 @@ export class OrderLoan {
 	intrAmt: number;
 	matDate: string;
 }
-
-// constructor(public data: { prop1: string, prop2: string }) {
-
-// }

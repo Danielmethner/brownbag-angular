@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { OrderStex } from '@models/OrderStex';
+import { ObjParty } from '@models/ObjParty';
 @Component({
   selector: 'app-new-order-bond-ipo',
   templateUrl: './new-order-bond-ipo.component.html',
@@ -7,7 +8,7 @@ import { OrderStex } from '@models/OrderStex';
 })
 export class NewOrderBondIpoComponent implements OnInit {
 
-
+  @Input() objParty: ObjParty;
   orderStex: OrderStex;
   status: string;
   coupon:number;
@@ -16,6 +17,8 @@ export class NewOrderBondIpoComponent implements OnInit {
 
   ngOnInit(): void {
     this.orderStex = new OrderStex();
+    this.orderStex.partyId = this.objParty.id;
+    this.orderStex.partyName = this.objParty.name;
   }
 
 }

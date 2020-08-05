@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { OrderStex } from '@models/OrderStex';
 import { ObjAsset } from '@models/ObjAsset';
 import { SelectItem } from 'primeng/api';
 import { ObjAssetService } from '@services/obj-asset.service';
+import { ObjParty } from '@models/ObjParty';
 @Component({
   selector: 'app-new-order-stex',
   templateUrl: './new-order-stex.component.html',
   styleUrls: ['./new-order-stex.component.css']
 })
 export class NewOrderStexComponent implements OnInit {
+  @Input() objParty: ObjParty;
+  
   orderStex: OrderStex;
   status: string;
   qtyAvbl: number;

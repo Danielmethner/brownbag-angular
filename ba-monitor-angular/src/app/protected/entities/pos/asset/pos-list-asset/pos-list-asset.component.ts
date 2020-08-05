@@ -1,7 +1,8 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, Input } from '@angular/core';
 import { ObjPos } from '@models/objpos';
 import { ObjPosService } from '@services/obj-pos.service';
 import { faSort } from '@fortawesome/free-solid-svg-icons';
+import { ObjParty } from '@models/ObjParty';
 
 @Component({
   selector: 'app-pos-list-asset',
@@ -10,6 +11,7 @@ import { faSort } from '@fortawesome/free-solid-svg-icons';
 })
 export class PosListAssetComponent implements OnInit {
 
+  @Input() objParty: ObjParty;
   faSort = faSort;
   posList: ObjPos[];
   cols: any[];
@@ -19,8 +21,7 @@ export class PosListAssetComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const partyId = 7;
-    this.objPosService.getPosListByPartyId(partyId).subscribe(posList =>
+    this.objPosService.getPosListByPartyId(this.objParty.id).subscribe(posList =>
       this.posList = posList
     );
 

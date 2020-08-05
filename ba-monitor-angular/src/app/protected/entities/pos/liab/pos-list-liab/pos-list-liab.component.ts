@@ -1,7 +1,8 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, Input } from '@angular/core';
 import { ObjPosLoan } from '@models/ObjPosLoan';
 import { ObjPosService } from '@services/obj-pos.service';
 import { faSort } from '@fortawesome/free-solid-svg-icons';
+import { ObjParty } from '@models/ObjParty';
 
 @Component({
   selector: 'app-pos-list-liab',
@@ -9,7 +10,7 @@ import { faSort } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./pos-list-liab.component.css']
 })
 export class PosListLiabComponent implements OnInit {
-
+  @Input() objParty: ObjParty;
 
   faSort = faSort;
   posList: ObjPosLoan[];
@@ -20,7 +21,7 @@ export class PosListLiabComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.objPosService.getPosLoanByPartyId().subscribe(posList =>
+    this.objPosService.getPosLoanByPartyId(this.objParty.id).subscribe(posList =>
       this.posList = posList
     );
 

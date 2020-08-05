@@ -27,15 +27,16 @@ export class LoginComponent implements OnInit {
 
   onLogin(): void {
     this.isLoading = true;
+    this.authService.logOut();
     this.authService.authenticate(this.user).subscribe(objUser => {
-      
+
       this.objUserService.saveUser(objUser);
 
       this.objPartyService.getPrivatePerson().subscribe(userPerson => {
         this.objPartyService.savePrivatePersonToSessionStorage(userPerson);
+        this.router.navigate(['person-base']);
       });
 
-      this.router.navigate(['person-base']);
       this.isLoading = false;
 
     }, err => {

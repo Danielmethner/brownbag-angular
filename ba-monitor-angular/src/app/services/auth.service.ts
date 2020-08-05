@@ -24,5 +24,7 @@ export class AuthService {
 
   logOut(): void {
     sessionStorage.removeItem('usertoken');
+    sessionStorage.removeItem('objUser');
+    sessionStorage.removeItem('userPerson');
   }
 }

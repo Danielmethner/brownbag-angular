@@ -1,6 +1,6 @@
 <div>
   <header class="jumbotron text-center">
-    <h1>Personal Finance: {{personName}}</h1>
+    <h1>Personal Finance: {{privatePerson.name}}</h1>
   </header>
 
   <div>
@@ -12,7 +12,7 @@
         </a>
         <ng-template ngbNavContent>
           <div class="justify-content-center">
-            <app-pos-list-asset></app-pos-list-asset>
+            <app-pos-list-asset [objParty]="privatePerson"></app-pos-list-asset>
           </div>
         </ng-template>
       </li>
@@ -22,7 +22,7 @@
         </a>
         <ng-template ngbNavContent>
           <div class="justify-content-center">
-            <app-pos-financing-base></app-pos-financing-base>
+            <app-pos-financing-base [objParty]="privatePerson"></app-pos-financing-base>
           </div>
         </ng-template>
       </li>
@@ -32,7 +32,7 @@
         </a>
         <ng-template ngbNavContent>
           <div class="justify-content-center">
-            <app-pos-trx></app-pos-trx>
+            <app-pos-trx [objParty]="privatePerson"></app-pos-trx>
           </div>
         </ng-template>
       </li>
@@ -42,7 +42,7 @@
         </a>
         <ng-template ngbNavContent>
           <div class="justify-content-center">
-            <app-order-stex-list></app-order-stex-list>
+            <app-order-stex-list [objParty]="privatePerson"></app-order-stex-list>
           </div>
         </ng-template>
       </li>
@@ -52,7 +52,7 @@
         </a>
         <ng-template ngbNavContent>
           <div class="justify-content-center">
-            <app-fin-stmt [stmtType]="'BAL_SHEET'"></app-fin-stmt>
+            <app-fin-stmt [stmtType]="'BAL_SHEET'" [objParty]="privatePerson"></app-fin-stmt>
           </div>
         </ng-template>
       </li>
@@ -62,7 +62,7 @@
         </a>
         <ng-template ngbNavContent>
           <div class="justify-content-center">
-            <app-fin-stmt [stmtType]="'INCOME_STMT'"></app-fin-stmt>
+            <app-fin-stmt [stmtType]="'INCOME_STMT'" [objParty]="privatePerson"></app-fin-stmt>
           </div>
         </ng-template>
       </li>
@@ -73,7 +73,7 @@
         </a>
         <ng-template ngbNavContent>
           <div class="justify-content-center">
-            <app-new-order-stex></app-new-order-stex>
+            <app-new-order-stex [objParty]="privatePerson"></app-new-order-stex>
           </div>
         </ng-template>
       </li>

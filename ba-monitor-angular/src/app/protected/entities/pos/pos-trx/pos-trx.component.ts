@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 import { ObjPos } from '@models/ObjPos';
 import { Booking } from '@models/Booking';
 import { ObjPosService } from '@services/obj-pos.service';
 import { faSort } from '@fortawesome/free-solid-svg-icons';
+import { ObjParty } from '@models/ObjParty';
 
 @Component({
   selector: 'app-pos-trx',
@@ -13,6 +14,7 @@ import { faSort } from '@fortawesome/free-solid-svg-icons';
 
 
 export class PosTrxComponent implements OnInit {
+  @Input() objParty: ObjParty;
   posList: SelectItem[];
   selectedPos: ObjPos;
   multiSortMeta: any[];
@@ -34,8 +36,7 @@ export class PosTrxComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const partyId = 7; // Trader1
-    // const posId = 15; // EUR position of PartyId = 7
+    const partyId = this.objParty.id;
     this.objPosService.getPosListByPartyId(partyId).subscribe(posList => {
       for (const pos of posList) {
         this.posList.push({ label: pos.name, value: pos });

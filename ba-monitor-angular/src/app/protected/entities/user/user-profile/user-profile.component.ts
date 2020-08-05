@@ -20,7 +20,6 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     this.privatePerson = this.objPartyService.getPrivatePersonFromSessionStorage();
     this.currentUser = JSON.parse(sessionStorage.getItem('user'));
-    console.log(this.privatePerson);
   }
 
 }

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { faSort } from '@fortawesome/free-solid-svg-icons';
 import { OrderStex } from '@models/OrderStex';
 import { OrderStexService } from '@services/order-stex.service';
+import { ObjParty } from '@models/ObjParty';
 
 @Component({
   selector: 'app-order-stex-list',
@@ -9,7 +10,7 @@ import { OrderStexService } from '@services/order-stex.service';
   styleUrls: ['./order-stex-list.component.css']
 })
 export class OrderStexListComponent implements OnInit {
-
+  @Input() objParty: ObjParty;
   faSort = faSort;
   orderStexList: OrderStex[];
   cols: any[];
@@ -18,7 +19,7 @@ export class OrderStexListComponent implements OnInit {
   constructor(private orderStexService: OrderStexService) { }
 
   ngOnInit(): void {
-    const partyId = 7;
+    const partyId = this.objParty.id;
     this.orderStexService.geOrderStexByParty(partyId).subscribe(orderStexList => {
 
       if (orderStexList != null) {

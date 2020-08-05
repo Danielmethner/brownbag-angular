@@ -6,7 +6,7 @@
 			<a ngbNavLink class="text-dark">Present Financing</a>
 			<ng-template ngbNavContent>
 				<div class="justify-content-center">
-					<app-pos-list-liab></app-pos-list-liab>
+					<app-pos-list-liab [objParty]="objParty"></app-pos-list-liab>
 				</div>
 			</ng-template>
 		</li>
@@ -14,7 +14,7 @@
 			<a ngbNavLink class="text-dark">Loan Application</a>
 			<ng-template ngbNavContent>
 				<div class="justify-content-center">
-					<app-new-order-loan></app-new-order-loan>
+					<app-new-order-loan [objParty]="objParty"></app-new-order-loan>
 				</div>
 			</ng-template>
 		</li>
@@ -22,7 +22,7 @@
 			<a ngbNavLink class="text-dark">Bond Issuance</a>
 			<ng-template ngbNavContent>
 				<div class="justify-content-center">
-					<app-new-order-bond-ipo></app-new-order-bond-ipo>
+					<app-new-order-bond-ipo [objParty]="objParty"></app-new-order-bond-ipo>
 				</div>
 			</ng-template>
 		</li>
@@ -30,7 +30,7 @@
 			<a ngbNavLink class="text-dark">Share Issuance</a>
 			<ng-template ngbNavContent>
 				<div class="justify-content-center">
-					<app-new-order-share-ipo></app-new-order-share-ipo>
+					<app-new-order-share-ipo [objParty]="objParty"></app-new-order-share-ipo>
 				</div>
 			</ng-template>
 		</li>
