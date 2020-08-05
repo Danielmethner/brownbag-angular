@@ -1,5 +1,5 @@
 import { Component, OnInit, Injectable, Input } from '@angular/core';
-import { ObjPos } from '@models/objpos';
+import { ObjPos } from '@models/ObjPos';
 import { ObjPosService } from '@services/obj-pos.service';
 import { faSort } from '@fortawesome/free-solid-svg-icons';
 import { ObjParty } from '@models/ObjParty';
