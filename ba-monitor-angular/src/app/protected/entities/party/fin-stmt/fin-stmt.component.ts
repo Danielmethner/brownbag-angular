@@ -9,31 +9,37 @@ import { ObjParty } from '@models/ObjParty';
   styleUrls: ['./fin-stmt.component.css']
 })
 export class FinStmtComponent implements OnInit {
-  @Input() objParty: ObjParty;
+  @Input() set objParty(objParty: ObjParty) {
+    this.getFinStmt(objParty, this.stmtType);
+  }
+
   @Input() stmtType: string;
   finStmtList: FinStmt[];
 
   constructor(private controlService: ControlService, private objPartyService: ObjPartyService) { }
 
   ngOnInit(): void {
-    this.getFinStmt(this.objParty.id, this.stmtType);
+    this.getFinStmt(this.objParty, this.stmtType);
   }
   showFinStmtList(finStmtList: FinStmt[]): void {
     this.finStmtList = finStmtList;
   }
-  getFinStmt(partyId: number, finStmtType: string): void {
+  getFinStmt(objParty: ObjParty, finStmtType: string): void {
 
-    this.controlService.getFinYear().subscribe(finYear => {
+    if (objParty != null) {
+      this.controlService.getFinYear().subscribe(finYear => {
 
-      const currentYear = finYear;
-      this.objPartyService.getFinStmtByPartyIdAndFinYearAndFinStmtTypeHist(
-        partyId,
-        currentYear,
-        finStmtType,
-        2
-      ).subscribe(finStmtList => {
-        this.showFinStmtList(finStmtList);
+        const currentYear = finYear;
+        this.objPartyService.getFinStmtByPartyIdAndFinYearAndFinStmtTypeHist(
+          objParty.id,
+          currentYear,
+          finStmtType,
+          2
+        ).subscribe(finStmtList => {
+          this.showFinStmtList(finStmtList);
+        });
       });
-    });
+
+    }
   }
 }

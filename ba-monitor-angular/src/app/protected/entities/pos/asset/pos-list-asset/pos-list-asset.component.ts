@@ -21,9 +21,7 @@ export class PosListAssetComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.objPosService.getPosListByPartyId(this.objParty.id).subscribe(posList =>
-      this.posList = posList
-    );
+    this.getPosListAsset(this.objParty.id);
 
 
     this.cols = [
@@ -38,6 +36,14 @@ export class PosListAssetComponent implements OnInit {
 
     this.multiSortMeta = [{ field: 'id', order: 1 }];
 
+  }
+
+  getPosListAsset(partyId: number): void {
+    if (partyId != null) {
+      this.objPosService.getPosListByPartyId(partyId).subscribe(posList =>
+        this.posList = posList
+      );
+    }
   }
 
 }

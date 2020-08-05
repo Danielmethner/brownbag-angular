@@ -21,6 +21,9 @@
       "@models/*": [
         "./app/models/*"
       ],
+      "@protected/*": [
+        "./app/protected/*"
+      ],
       "@services/*": [
         "./app/services/*"
       ],
