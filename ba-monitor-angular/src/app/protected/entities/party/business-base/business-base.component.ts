@@ -14,9 +14,6 @@ import { faChartPie, faCreditCard, faExchangeAlt, faFile, faColumns, faList } fr
 })
 export class BusinessBaseComponent implements OnInit {
 
-  @ViewChild(PosListAssetComponent) private posListAssetCompo: PosListAssetComponent;
-  // @ViewChild(FinStmtComponent) private finStmtCompo: FinStmtComponent;
-
   businessList: SelectItem[];
   selectedBusiness: ObjParty;
   faChartPie = faChartPie;
@@ -42,9 +39,6 @@ export class BusinessBaseComponent implements OnInit {
   onChangeParty(selectedBusiness: ObjParty): void {
 
     this.selectedBusiness = selectedBusiness;
-    if (this.posListAssetCompo) {
-      this.posListAssetCompo.getPosListAsset(this.selectedBusiness.id);
-    }
 
   }
 }

@@ -8,11 +8,18 @@ import { ObjParty } from '@models/ObjParty';
 })
 export class PosFinancingBaseComponent implements OnInit {
 
-  @Input() objParty: ObjParty;
+  finParty: ObjParty;
 
+  @Input() set objParty(objParty: ObjParty) {
+    this.setFinParty(objParty);
+  }
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  setFinParty(myParty: ObjParty): void {
+    this.finParty = myParty;
   }
 
 }

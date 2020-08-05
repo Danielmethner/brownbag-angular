@@ -8,16 +8,24 @@ import { ObjParty } from '@models/ObjParty';
   styleUrls: ['./new-order-loan.component.css']
 })
 export class NewOrderLoanComponent implements OnInit {
-  @Input() objParty: ObjParty;
+
   orderLoan: OrderLoan;
   status: string;
+
+  @Input() set objParty(objParty: ObjParty) {
+    this.newOrderLoan(objParty);
+  }
 
   constructor() { }
 
   ngOnInit(): void {
-    this.orderLoan = new OrderLoan(); 
-    this.orderLoan.partyId = this.objParty.id;
-    this.orderLoan.partyName = this.objParty.name;
   }
 
+  newOrderLoan(objParty: ObjParty): void {
+    if (objParty != null && objParty.id != null) {
+      this.orderLoan = new OrderLoan();
+      this.orderLoan.partyId = objParty.id;
+      this.orderLoan.partyName = objParty.name;
+    }
+  }
 }

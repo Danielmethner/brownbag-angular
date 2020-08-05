@@ -9,6 +9,7 @@ import { ObjParty } from '@models/ObjParty';
   styleUrls: ['./fin-stmt.component.css']
 })
 export class FinStmtComponent implements OnInit {
+  
   @Input() set objParty(objParty: ObjParty) {
     this.getFinStmt(objParty, this.stmtType);
   }
@@ -19,8 +20,8 @@ export class FinStmtComponent implements OnInit {
   constructor(private controlService: ControlService, private objPartyService: ObjPartyService) { }
 
   ngOnInit(): void {
-    this.getFinStmt(this.objParty, this.stmtType);
   }
+  
   showFinStmtList(finStmtList: FinStmt[]): void {
     this.finStmtList = finStmtList;
   }

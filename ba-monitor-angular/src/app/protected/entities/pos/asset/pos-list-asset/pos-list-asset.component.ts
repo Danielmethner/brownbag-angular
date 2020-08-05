@@ -11,7 +11,9 @@ import { ObjParty } from '@models/ObjParty';
 })
 export class PosListAssetComponent implements OnInit {
 
-  @Input() objParty: ObjParty;
+  @Input() set objParty(objParty: ObjParty) {
+    this.getPosListAsset(objParty);
+  }
   faSort = faSort;
   posList: ObjPos[];
   cols: any[];
@@ -21,7 +23,7 @@ export class PosListAssetComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getPosListAsset(this.objParty.id);
+    this.getPosListAsset(this.objParty);
 
 
     this.cols = [
@@ -38,9 +40,9 @@ export class PosListAssetComponent implements OnInit {
 
   }
 
-  getPosListAsset(partyId: number): void {
-    if (partyId != null) {
-      this.objPosService.getPosListByPartyId(partyId).subscribe(posList =>
+  getPosListAsset(party: ObjParty): void {
+    if (party != null && party.id != null) {
+      this.objPosService.getPosListByPartyId(party.id).subscribe(posList =>
         this.posList = posList
       );
     }

@@ -10,8 +10,15 @@ import { ObjParty } from '@models/ObjParty';
   styleUrls: ['./pos-list-liab.component.css']
 })
 export class PosListLiabComponent implements OnInit {
-  @Input() objParty: ObjParty;
 
+  @Input() set objParty(objParty: ObjParty) {
+    // console.log('fsdfs');
+    // console.log(objParty);
+    // if (objParty != null) {
+    //   this.getPosLoanByPartyId(objParty);
+    // }
+
+  }
   faSort = faSort;
   posList: ObjPosLoan[];
   cols: any[];
@@ -20,11 +27,7 @@ export class PosListLiabComponent implements OnInit {
   constructor(private objPosService: ObjPosService) {
   }
 
-  ngOnInit() {
-    this.objPosService.getPosLoanByPartyId(this.objParty.id).subscribe(posList =>
-      this.posList = posList
-    );
-
+  ngOnInit(): void {
 
     this.cols = [
       { field: 'id', header: 'ID', filter: true, classes: 'text-center max-width-20px', type: 'integer' },
@@ -38,6 +41,13 @@ export class PosListLiabComponent implements OnInit {
     this.multiSortMeta = [{ field: 'id', order: 1 }];
 
   }
+  getPosLoanByPartyId(objParty: ObjParty) {
+    if (objParty != null && objParty.id != null) {
+      this.objPosService.getPosLoanByPartyId(objParty.id).subscribe(posList =>
+        this.posList = posList
+      );
+    }
 
+  }
 
 }
