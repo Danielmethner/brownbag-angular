@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build --aot --prod",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -33,7 +33,6 @@
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
     "bootstrap": "^4.5.0",
     "compression": "^1.7.4",
-    "compression-webpack-plugin": "^4.0.0",
     "lodash": "^4.17.19",
     "ng2-smart-table": "^1.6.0",
     "nunito-fontface": "^0.7.3",
