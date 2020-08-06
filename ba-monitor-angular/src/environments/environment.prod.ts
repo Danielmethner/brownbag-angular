@@ -1,4 +1,4 @@
 export const environment = {
-  apiBaseUrl: 'https://brownbag-api.herokuapp.com',
-  production: true
+  production: true,
+  apiBaseUrl: 'https://brownbag-api.herokuapp.com'
 };
