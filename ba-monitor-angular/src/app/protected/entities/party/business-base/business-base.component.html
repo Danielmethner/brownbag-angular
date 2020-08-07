@@ -3,13 +3,14 @@
     <h1>Business Management</h1>
   </header>
   <div class="col-md-5 col-sd-10">
-    <p-dropdown [options]="businessList" placeholder="Select a Business" [(ngModel)]="selectedBusiness" (onChange)="onChangeParty(selectedBusiness)" [filter]="businessList.length >10" [style]="{'width':'100%'}">
+    <p-dropdown [options]="businessList" placeholder="Select a Business" [(ngModel)]="selectedBusiness" (onChange)="onChangeParty(selectedBusiness)" [filter]="businessList.length >10"
+      [style]="{'width':'100%'}">
     </p-dropdown>
   </div>
-  <div  *ngIf="selectedBusiness">
+  <div *ngIf="selectedBusiness">
     <ul ngbNav #nav="ngbNav" class="nav-tabs">
 
-      <li [ngbNavItem]="1" >
+      <li [ngbNavItem]="1">
         <a ngbNavLink>
           <fa-icon [icon]="faChartPie" [styles]="{ 'color': 'black'}"></fa-icon> <span class="text-dark"> Portfolio </span>
         </a>
@@ -77,6 +78,16 @@
         <ng-template ngbNavContent>
           <div class="justify-content-center">
             <app-new-order-stex [objParty]="selectedBusiness"></app-new-order-stex>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="8">
+        <a ngbNavLink>
+          <fa-icon [icon]="faBuilding" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Create Business</span>
+        </a>
+        <ng-template ngbNavContent>
+          <div class="justify-content-center">
+            <app-business-new [objParty]="selectedBusiness"></app-business-new>
           </div>
         </ng-template>
       </li>

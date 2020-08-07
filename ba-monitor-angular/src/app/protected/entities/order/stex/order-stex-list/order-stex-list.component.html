@@ -17,7 +17,7 @@
 			<tr class="table-hover table-borderless">
 				<td [ngClass]="col.classes" class="table-hover table-borderless" *ngFor="let col of columns">
 					<div *ngIf="['integer', 'text'].indexOf(col.type) > -1">{{rowData[col.field] }}</div>
-					<div *ngIf="col.type=='buy-sell'" class="font-weight-bold">{{rowData[col.field]  }}</div>
+					<div *ngIf="col.type=='buy-sell'" class="font-weight-bold" [ngClass]="rowData[col.field] == 'BUY' ? 'text-success' : 'text-danger'">{{rowData[col.field]  }}</div>
 					<div *ngIf="col.type=='double'">{{rowData[col.field]| number  }}</div>
 					<div *ngIf="col.type=='currency'">{{rowData[col.field]| currency:'USD'  }}</div>
 					<div *ngIf="col.type=='date'">{{rowData[col.field]| date  }}</div>

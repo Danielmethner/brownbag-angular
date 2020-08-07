@@ -5,7 +5,7 @@ import { PosListAssetComponent } from '@protected/entities/pos/asset/pos-list-as
 import { FinStmtComponent } from '@protected/entities/party/fin-stmt/fin-stmt.component';
 
 import { ObjPartyService } from '@services/obj-party.service';
-import { faChartPie, faCreditCard, faExchangeAlt, faFile, faColumns, faList } from '@fortawesome/free-solid-svg-icons';
+import { faChartPie, faCreditCard, faExchangeAlt, faFile, faColumns, faList, faBuilding } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-business-base',
@@ -19,7 +19,7 @@ export class BusinessBaseComponent implements OnInit {
   faChartPie = faChartPie;
   faExchangeAlt = faExchangeAlt;
   faCreditCard = faCreditCard;
-  faFile = faFile; faColumns = faColumns; faList = faList;
+  faFile = faFile; faColumns = faColumns; faList = faList; faBuilding = faBuilding;
 
   constructor(private objPartyService: ObjPartyService) {
     this.businessList = [];

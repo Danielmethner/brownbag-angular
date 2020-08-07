@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessNewComponent implements OnInit {
 
+  status: string;
+  nomVal: number;
+  legalFormDflt: string;
   constructor() { }
 
   ngOnInit(): void {

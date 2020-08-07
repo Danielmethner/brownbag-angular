@@ -12,11 +12,9 @@ import { ObjParty } from '@models/ObjParty';
 export class PosListLiabComponent implements OnInit {
 
   @Input() set objParty(objParty: ObjParty) {
-    // console.log('fsdfs');
-    // console.log(objParty);
-    // if (objParty != null) {
-    //   this.getPosLoanByPartyId(objParty);
-    // }
+    if (objParty != null) {
+      this.getPosLoanByPartyId(objParty);
+    }
 
   }
   faSort = faSort;
