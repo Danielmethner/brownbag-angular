@@ -5,6 +5,12 @@
 		</div>
 
 		<div class="card p-4 bg-light form-group row">
+			<!-- <div class="form-group row">
+				<div class="col-md-12">
+					<label for="inputPartyName">Name</label>
+					<input type="text" class="form-control" id="qty" readonly/>
+				</div>
+			</div> -->
 			<div class="form-group row">
 				<div class="col-md-12">
 					<label for="inputName">Name</label>
@@ -14,9 +20,10 @@
 			<div class="form-group row">
 				<div class="col-md-12">
 					<label for="inputLegalForm">Legal Form</label>
-					<!-- <b-form-select  :options="legalFormList">
-								<option disabled value="null">{{legalFormDflt}}</option>
-							</b-form-select> -->
+					<div class="dropdown">
+						<p-dropdown [options]="legalformList" placeholder="Select a legalform" [(ngModel)]="selectedLegalform" (onChange)="onChangeLF(selectedLegalform)"
+							[filter]="legalformList.length >10" [style]="{'width':'100%'}"></p-dropdown>
+					</div>
 				</div>
 			</div>
 			<div class="form-group row">

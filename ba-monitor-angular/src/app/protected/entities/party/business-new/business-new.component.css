@@ -2,6 +2,10 @@ input {
   margin-bottom: 8px !important;
 }
 
+.dropdown {
+  margin-bottom: 8px !important;
+}
+
 body .ui-dropdown {
   border-bottom-color: rgb(206, 212, 218);
   border: 1px solid rgb(206, 212, 218);
@@ -9,7 +13,7 @@ body .ui-dropdown {
 
 #asset {
   text-align: left;
-  
+
 }
 
 #content {
@@ -38,9 +42,4 @@ body .ui-dropdown {
 
 .submit-feedback {
   min-height: 19px;
-}
-
-.trade-dir {
-  margin: 0 auto;
-  max-width: 50%;
 }
