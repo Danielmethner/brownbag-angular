@@ -1,0 +1,15 @@
+.jumbotron {
+  padding: 2em;
+}
+
+.amtPositive {
+  color: green;
+}
+
+.amtNegative {
+  color: red;
+}
+
+.justify-content-center {
+  padding: 1em;
+}

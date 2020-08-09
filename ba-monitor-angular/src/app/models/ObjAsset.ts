@@ -1,4 +1,4 @@
-export interface ObjAsset {
+export class ObjAsset {
 	id: number;
 	name: string;
 	isin: string;

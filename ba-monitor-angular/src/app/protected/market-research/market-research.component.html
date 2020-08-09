@@ -1,1 +1,75 @@
-<p>market-research works!</p>
+<div>
+	<header class="jumbotron text-center">
+		<h1>Market Research</h1>
+		<h3>Analyse Market Orders and Corporate Data</h3>
+	</header>
+	<div class="col-md-12">
+		<div class="form-group row">
+			<div class="col-md-4">
+				<p-dropdown [options]="assetList" placeholder="Select an asset" [(ngModel)]="selectedAsset" (onChange)="onChange(selectedAsset)" [filter]="assetList.length >10"
+					[style]="{'width':'100%'}">
+				</p-dropdown>
+			</div>
+			<div class="col-md-6 align-middle" *ngIf="isLoading">
+				<div class="row">
+					<p-progressSpinner strokeWidth="8" [style]="{width: '30px', height: '30px'}" class="align-middle"></p-progressSpinner><span class="align-self-center">Loading asset data</span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="col-md-12" *ngIf="selectedAsset !=null">
+		<div class="col-md-12">
+			<ul ngbNav #nav="ngbNav" class="nav-tabs">
+
+				<li [ngbNavItem]="1">
+					<a ngbNavLink>
+						<fa-icon [icon]="faChartPie" [styles]="{ 'color': 'black'}"></fa-icon> <span class="text-dark"> Overview </span>
+					</a>
+					<ng-template ngbNavContent>
+						<div class="justify-content-center">
+							<app-pos-list-asset [objParty]="selectedBusiness"></app-pos-list-asset>
+						</div>
+					</ng-template>
+				</li>
+				<li [ngbNavItem]="2">
+					<a ngbNavLink>
+						<fa-icon [icon]="faList" [styles]="{ 'color': 'black'}"></fa-icon> <span class="text-dark"> Public Orderbook </span>
+					</a>
+					<ng-template ngbNavContent>
+						<div class="justify-content-center">
+							<order-stex-list-public [objParty]="selectedBusiness"></order-stex-list-public>
+						</div>
+					</ng-template>
+				</li>
+				<li [ngbNavItem]="3">
+					<a ngbNavLink>
+						<fa-icon [icon]="faColumns" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Balance Sheet</span>
+					</a>
+					<ng-template ngbNavContent>
+						<div class="justify-content-center">
+							<app-fin-stmt [stmtType]="'BAL_SHEET'" [objParty]="selectedBusiness"></app-fin-stmt>
+						</div>
+					</ng-template>
+				</li>
+				<li [ngbNavItem]="4">
+					<a ngbNavLink>
+						<fa-icon [icon]="faColumns" [styles]="{ 'color': 'black'}"></fa-icon><span class="text-dark"> Income Statement</span>
+					</a>
+					<ng-template ngbNavContent>
+						<div class="justify-content-center">
+							<app-fin-stmt [stmtType]="'INCOME_STMT'" [objParty]="selectedBusiness"></app-fin-stmt>
+						</div>
+					</ng-template>
+				</li>
+			</ul>
+			<div [ngbNavOutlet]="nav"></div>
+		</div>
+	</div>
+
+	<div class="row" *ngIf="!selectedAsset">
+		<div class="col-md-12">
+			<h2>Select an asset to view its data!</h2>
+		</div>
+	</div>
+</div>

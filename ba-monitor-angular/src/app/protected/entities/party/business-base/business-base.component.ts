@@ -1,8 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 import { ObjParty } from '@models/ObjParty';
-import { PosListAssetComponent } from '@protected/entities/pos/asset/pos-list-asset/pos-list-asset.component';
-import { FinStmtComponent } from '@protected/entities/party/fin-stmt/fin-stmt.component';
 
 import { ObjPartyService } from '@services/obj-party.service';
 import { faChartPie, faCreditCard, faExchangeAlt, faFile, faColumns, faList, faBuilding } from '@fortawesome/free-solid-svg-icons';
@@ -37,8 +35,6 @@ export class BusinessBaseComponent implements OnInit {
   }
 
   onChangeParty(selectedBusiness: ObjParty): void {
-
     this.selectedBusiness = selectedBusiness;
-
   }
 }

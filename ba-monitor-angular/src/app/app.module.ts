@@ -8,6 +8,9 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+// --------------------------------------------------------
+// PRIME NG
+// --------------------------------------------------------
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
@@ -16,6 +19,7 @@ import { ContextMenuModule } from 'primeng/contextmenu';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -49,6 +53,7 @@ import { NewOrderStexComponent } from './protected/entities/order/stex/new-order
 import { MarketResearchComponent } from './protected/market-research/market-research.component';
 import { ControlPanelComponent } from './protected/control-panel/control-panel.component';
 import { LogoutComponent } from './public/logout/logout.component';
+import { OrderStexListPublicComponent } from './protected/entities/order/stex/order-stex-list-public/order-stex-list-public.component';
 
 
 @NgModule({
@@ -82,6 +87,7 @@ import { LogoutComponent } from './public/logout/logout.component';
     MarketResearchComponent,
     ControlPanelComponent,
     LogoutComponent,
+    OrderStexListPublicComponent,
   ],
   imports: [
     CommonModule,
@@ -95,6 +101,7 @@ import { LogoutComponent } from './public/logout/logout.component';
     DropdownModule,
     ButtonModule,
     InputTextModule,
+    ProgressSpinnerModule,
     FormsModule,
     NgbModule,
     AppRoutingModule,
