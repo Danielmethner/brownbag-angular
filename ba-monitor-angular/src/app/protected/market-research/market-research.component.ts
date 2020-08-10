@@ -24,6 +24,7 @@ export class MarketResearchComponent implements OnInit {
   ngOnInit(): void {
     this.selectedAsset = new ObjAsset();
     this.selectedBusiness = new ObjParty();
+
     this.objAssetService.getAllSec().subscribe(assetList => {
       for (const asset of assetList) {
         this.assetList.push({ label: asset.name, value: asset });
