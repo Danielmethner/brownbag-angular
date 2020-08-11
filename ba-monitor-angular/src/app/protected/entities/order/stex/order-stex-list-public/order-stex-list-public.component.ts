@@ -11,7 +11,7 @@ import { faSort } from '@fortawesome/free-solid-svg-icons';
 export class OrderStexListPublicComponent implements OnInit {
 
 
-  orderbook: OrderStex[][];
+  orderbook: any[];
 
   @Input()
   set objAsset(objAsset: ObjAsset) {
@@ -21,6 +21,7 @@ export class OrderStexListPublicComponent implements OnInit {
   multiSortMeta: any[];
   orderStexList: OrderStex[];
   faSort = faSort;
+  headerClass: string = 'bg-success';
 
   constructor(private orderStexService: OrderStexService) { }
 
@@ -37,8 +38,18 @@ export class OrderStexListPublicComponent implements OnInit {
 
   getOrderBook(selectedAsset: ObjAsset): void {
 
-    let buyOrders: OrderStex[] = [];
-    let sellOrders: OrderStex[] = [];
+    let buyOrders = {
+      caption: 'BUY',
+      headerClass: 'bg-success',
+      orders: []
+    }
+    buyOrders.orders = [];
+    let sellOrders = {
+      caption: 'SELL',
+      headerClass: 'bg-danger',
+      orders: []
+    }
+    sellOrders.orders = [];
     this.orderbook = [];
     if (selectedAsset != null) {
       this.orderStexService.getOrdersByPlacedAndAsset(selectedAsset.id).subscribe(orderStexList => {
@@ -46,9 +57,9 @@ export class OrderStexListPublicComponent implements OnInit {
           console.log(buyOrders);
           orderStexList.forEach(orderStex => {
             if (orderStex.orderDir == 'BUY') {
-              buyOrders.push(orderStex);
+              buyOrders.orders.push(orderStex);
             } else {
-              sellOrders.push(orderStex);
+              sellOrders.orders.push(orderStex);
             }
           });
           this.orderbook.push(buyOrders);

@@ -1,17 +1,23 @@
 <div class="row">
 	<div class="col-md-6" *ngFor="let direction of orderbook">
-
-		<p-table class="table-borderless" #dt [autoLayout]="true" [columns]="cols" [value]="direction" [paginator]="orderbook.sellOrders ? orderbook.sellOrders.length >10: false" [rows]="10"
-			sortMode="multiple" [multiSortMeta]="multiSortMeta">
+		<p-table class="table-borderless" [autoLayout]="false" [columns]="cols" [value]="direction.orders" [paginator]="direction.orders.orders ? direction.orders.length >10: false" [rows]="10"
+			sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-responsive-demo">
 			<ng-template pTemplate="header" let-columns class="bg-info">
-				<tr class="">
-					<th class="bg-info text-light" *ngFor="let col of columns" [pSortableColumn]="col.field">
+
+				<tr>
+					<th colspan="4" class="text-light font-weight-bold h5" [ngClass]="direction.headerClass">
+						{{direction.caption}}
+					</th>
+				</tr>
+
+				<tr>
+					<th class="bg-dark text-light" *ngFor="let col of columns" [pSortableColumn]="col.field">
 						<fa-icon [icon]="faSort" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon> {{col.header}}
 					</th>
 				</tr>
 				<tr>
-					<th class="bg-info text-center" *ngFor="let col of columns" [ngSwitch]="col.field">
-						<input *ngIf="col.filter" pInputText type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
+					<th class="bg-dark text-light" *ngFor="let col of columns" [ngSwitch]="col.field">
+						<input style="width:100%" *ngIf="col.filter" pInputText type="text" (input)="dt.filter($event.target.value, col.field, 'contains')">
 					</th>
 				</tr>
 			</ng-template>
